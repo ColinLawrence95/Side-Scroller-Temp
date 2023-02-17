@@ -22,10 +22,10 @@
     {"name":"GH","order":3,"path":"folders/Sprites/Levels/GH.yy",},
     {"name":"Menu","order":1,"path":"folders/Sprites/Menu.yy",},
     {"name":"Player","order":2,"path":"folders/Sprites/Player.yy",},
+    {"name":"UI","order":8,"path":"folders/Sprites/UI.yy",},
     {"name":"Weapons","order":4,"path":"folders/Sprites/Weapons.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"UI","order":8,"path":"folders/Sprites/UI.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"oMouse","order":14,"path":"objects/oMouse/oMouse.yy",},

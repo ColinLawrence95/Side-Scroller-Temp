@@ -15,6 +15,7 @@ if (mouse_check_button (mb_left)) and (firingDelay <0)
 	recoil = 10;
 	firingDelay = 50;
 	ScreenShake(1,10);
+	audio_play_sound(sfxBasic_Shot,7,false);
 	with (instance_create_layer (x,y,"Bullets",oBullet)) 
 	{
 		speed = 15;
