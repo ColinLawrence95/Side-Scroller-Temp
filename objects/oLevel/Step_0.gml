@@ -1,4 +1,4 @@
-//Determining what level you are on for Paralax
+/// @desc Determining what level you are on for Paralax
 with (oCamera)
 {
 	if (object_exists(oLevel))
