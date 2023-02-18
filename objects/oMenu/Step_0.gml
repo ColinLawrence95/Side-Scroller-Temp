@@ -33,14 +33,14 @@ if (menuX > guiWidth + 150) and (menuCommited != -1)
 {
 	switch (menuCommited)
 	{
-		//new game
-		case 3: default: Transition(TRANS_MODE.NEXT); break;
-		//continue
+		//New game
+		case 3: Transition(TRANS_MODE.GOTO,"2"); break;
+		//Continue
 		case 2: 
 		{
 			if (!file_exists(SAVEFILE))
 			{
-				Transition(TRANS_MODE.NEXT); break;
+				Transition(TRANS_MODE.GOTO,"2"); break;
 			}
 			else
 			{
@@ -51,7 +51,9 @@ if (menuX > guiWidth + 150) and (menuCommited != -1)
 			}
 		}
 		break;
-		//quit
+		//Settings
+		case 1: Transition(TRANS_MODE.GOTO,"1"); break;
+		//Quit
 		case 0: game_end(); break;
 	}
 }
