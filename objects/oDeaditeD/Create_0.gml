@@ -7,3 +7,5 @@ vsp = 0;
 grv = 0.3;
 done = 0;
 ScreenShake(6,10)
+
+audio_play_sound(sfxDeadite_Death,10,false);

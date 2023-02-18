@@ -1,4 +1,5 @@
-/// @description Moves to next room
+/// @description Moves to room assigned to destination
+
 
 with (oPlayer)
 {

@@ -23,6 +23,8 @@ vsp = vsp + grv;
 if (place_meeting (x,y+1,oWall)) and (key_jump)
 {
 	vsp = -7.5;
+	//Playing Jump SFX
+	audio_play_sound(sfxPlayer_Jump,6,false);
 }
 
 //Horizontal Collision
@@ -59,6 +61,12 @@ if (!place_meeting(x,y+1,oWall))
 //Checking if Idle
 else
 {
+	if (sprite_index == sPlayerA)
+	{
+		audio_sound_pitch(sfxPlayer_Landing,random_range(0.5,1.5));
+		audio_play_sound(sfxPlayer_Landing,4,false);
+		
+	}
 	image_speed = 1;
 	if (hsp == 0)
 	{
@@ -74,4 +82,5 @@ else
 
 // Flipping sprite if moving left
 if (hsp != 0) image_xscale = sign(hsp) * 2;
+
 
