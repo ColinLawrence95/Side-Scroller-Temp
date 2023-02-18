@@ -4,7 +4,14 @@
 if (instance_exists(follow))
 {
 	xTo = follow.x;
-	yTo = follow.y
+	yTo = follow.y;
+	
+	//Camera lock on player death
+	if ((follow).object_index == oPlayerD)
+	{
+		x = xTo;
+		y = yTo;
+	}
 }
 
 //Update X and Y of camera

@@ -1,10 +1,10 @@
-//Setting hit flash
-draw_self();
+///@desc Setting hit flash
+		draw_self();
 
-if (flash > 0)
-{
-	flash = flash - 1;
-	shader_set(shWhite);
-	draw_self();
-	shader_reset();
-}
+		if (playerFlash > 0)
+		{
+			playerFlash = playerFlash - 1;
+			shader_set(shRed);
+			draw_self();
+			shader_reset();
+		}
