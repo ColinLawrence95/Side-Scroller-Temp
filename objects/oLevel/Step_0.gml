@@ -1,7 +1,3 @@
-/* Green House 1
-	All actions to run specifically for Green House 1 go here,
-	or in the level specific object instance*/
-	
 //Checking Level ID
 if (other.levelID = "greenhouse1")
 {
@@ -17,4 +13,5 @@ if (other.levelID = "greenhouse1")
 	}
 	
 }
+
 
