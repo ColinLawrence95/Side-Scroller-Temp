@@ -15,6 +15,7 @@ menuCommited = -1;
 menu_hasControl = true;
 
 //Menu Options Array
+menu[4] = "Colin Test Room";
 menu[3] = "New Game";
 menu[2] = "Continue";
 menu[1] = "Settings";
