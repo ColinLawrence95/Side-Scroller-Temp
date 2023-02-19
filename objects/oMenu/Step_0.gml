@@ -34,13 +34,13 @@ if (menuX > guiWidth + 150) and (menuCommited != -1)
 	switch (menuCommited)
 	{
 		//New game
-		case 3: Transition(TRANS_MODE.GOTO,"2"); break;
+		case 3: Transition(TRANS_MODE.GOTO, Room1); break;
 		//Continue
 		case 2: 
 		{
 			if (!file_exists(SAVEFILE))
 			{
-				Transition(TRANS_MODE.GOTO,"2"); break;
+				Transition(TRANS_MODE.GOTO, Room1); break;
 			}
 			else
 			{
@@ -52,7 +52,7 @@ if (menuX > guiWidth + 150) and (menuCommited != -1)
 		}
 		break;
 		//Settings
-		case 1: Transition(TRANS_MODE.GOTO,"1"); break;
+		case 1: Transition(TRANS_MODE.GOTO,rMenu_Settings); break;
 		//Quit
 		case 0: game_end(); break;
 	}

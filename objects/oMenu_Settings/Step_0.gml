@@ -34,14 +34,14 @@ if (menuX > guiWidth + 150) and (menuCommited != -1)
 	switch (menuCommited)
 	{
 		//Controls
-		case 4: Transition(TRANS_MODE.GOTO,room_first); break;
+		case 4: Transition(TRANS_MODE.GOTO, rMenu); break;
 		//Graphics
-		case 3: Transition(TRANS_MODE.GOTO,room_first); break;
+		case 3: Transition(TRANS_MODE.GOTO, rMenu); break;
 		//Audio
-		case 2: Transition(TRANS_MODE.GOTO,room_first); break;
+		case 2: Transition(TRANS_MODE.GOTO, rMenu); break;
 		//Credits
-		case 1: Transition(TRANS_MODE.GOTO,room_first); break;
+		case 1: Transition(TRANS_MODE.GOTO, rMenu); break;
 		//Back
-		case 0: Transition(TRANS_MODE.GOTO,room_first); break;
+		case 0: Transition(TRANS_MODE.GOTO, rMenu); break;
 	}
 }
