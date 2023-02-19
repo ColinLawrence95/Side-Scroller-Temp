@@ -101,4 +101,8 @@ else
 // Flipping sprite if moving left
 if (hsp != 0) image_xscale = sign(hsp) * 2;
 
-
+//Killing player if hp = 0
+if (playerHP <=0)
+{
+	PlayerDeath();
+}
