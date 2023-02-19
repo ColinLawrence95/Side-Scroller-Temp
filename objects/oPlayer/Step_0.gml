@@ -72,7 +72,22 @@ if (!place_meeting(x,y+1,oWall))
 {
 	sprite_index = sPlayerA;
 	image_speed = 1;
-	if (sign(vsp) < 0) image_index = 0; else image_index = 2;
+	if (vsp < -1)
+	{
+		image_index = 0;
+	}
+	if (vsp >= -1 && vsp <= 0  )
+	{
+		image_index = 1;
+	}
+	if (vsp >= 0 && vsp <= 1  )
+	{
+		image_index = 2;
+	}
+	if (vsp > 1)
+	{
+		image_index = 3;
+	}
 }
 
 //Checking if Idle
@@ -80,8 +95,9 @@ else
 {
 	if (sprite_index == sPlayerA)
 	{
-		audio_sound_pitch(sfxPlayer_Landing,random_range(0.5,1.5));
-		audio_play_sound(sfxPlayer_Landing,4,false);
+		landingSound = audio_play_sound(sfxPlayer_Landing,4,false);
+		audio_sound_pitch(landingSound,random_range(0.5,1.5));
+
 	}
 	
 	image_speed = 1;
