@@ -20,7 +20,7 @@ if (menu_hasControl)
 		if (menuHover < 0) menuHover = menuOptions - 1;
 	}
 	//confirm choice
-	if (keyboard_check_pressed(vk_enter))
+	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space))
 	{
 		menu_x_Final = guiWidth + 200;
 		menuCommited = menuHover;

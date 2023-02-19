@@ -21,12 +21,12 @@
     {"name":"Level Assets","order":5,"path":"folders/Sprites/Level Assets.yy",},
     {"name":"GH","order":3,"path":"folders/Sprites/Levels/GH.yy",},
     {"name":"Menu","order":1,"path":"folders/Sprites/Menu.yy",},
+    {"name":"Settings","order":4,"path":"folders/Sprites/Menu/Settings.yy",},
     {"name":"Player","order":2,"path":"folders/Sprites/Player.yy",},
     {"name":"UI","order":8,"path":"folders/Sprites/UI.yy",},
     {"name":"Weapons","order":4,"path":"folders/Sprites/Weapons.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Settings","order":4,"path":"folders/Sprites/Menu/Settings.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"sMenu324","order":2,"path":"sprites/sMenu324/sMenu324.yy",},
