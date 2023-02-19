@@ -12,7 +12,6 @@ if (canDie = true)
 		audio_play_sound(sfxPlayer_Hit,15,false);
 		playerFlash = 3;
 		invincable = 1;
-		enemyID = object_get_name(oDeadite);
 		show_debug_message(playerHP);
 		
 		if (!alarm[0])
