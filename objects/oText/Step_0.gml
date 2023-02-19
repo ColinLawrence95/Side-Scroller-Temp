@@ -18,6 +18,12 @@ w = string_width(txtCurrent);
 if (letters >= length) and (keyboard_check_pressed(ord("F")))
 {
 	instance_destroy();
+	//Player can move when text box ends
+	with (oPlayer)
+	{
+	hascontrol = true;
+	}
+	
 	with (oCamera)
 	{
 		follow = oPlayer;
