@@ -107,6 +107,7 @@
     {"name":"inst_74ECC987","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_117D44A0","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5713030D","path":"rooms/Room1/Room1.yy",},
+<<<<<<< Updated upstream
     {"name":"inst_3D5E3839","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_223388E6","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_2A983C6","path":"rooms/Room1/Room1.yy",},
@@ -197,6 +198,9 @@
     {"name":"inst_25119A80","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_659E6A9","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_606DA87E","path":"rooms/Room1/Room1.yy",},
+=======
+    {"name":"inst_71FAE308","path":"rooms/Room1/Room1.yy",},
+>>>>>>> Stashed changes
   ],
   "isDnd": false,
   "layers": [
@@ -258,7 +262,9 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_606DA87E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oTriggerPlayerDeath","path":"objects/oTriggerPlayerDeath/oTriggerPlayerDeath.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2528.0,"y":1504.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Entities","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3D5E3839","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oText","path":"objects/oText/oText.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":544.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_71FAE308","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oNPC1","path":"objects/oNPC1/oNPC1.yy",},"properties":[
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oNPC1","path":"objects/oNPC1/oNPC1.yy",},"propertyId":{"name":"txt","path":"objects/oNPC1/oNPC1.yy",},"value":"\"Hello handsome!\\nAre you ready to grease? \"",},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":704.0,"y":512.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Deadite","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Gun","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
