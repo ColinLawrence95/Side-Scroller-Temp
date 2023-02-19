@@ -12,7 +12,7 @@ done = 0;
 ScreenShake(7,100)
 audio_play_sound(sfxDeadite_Death,1000,false);
 //Slow Motion
-game_set_speed(45,gamespeed_fps);
+game_set_speed(35,gamespeed_fps);
 
 with (oCamera)
 {

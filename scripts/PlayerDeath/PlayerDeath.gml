@@ -7,6 +7,9 @@ function PlayerDeath(lastTouch)
 	}
 	//change to oPlayerD
 	instance_change(oPlayerD,true);
+	//Delete mouse object
+	instance_destroy(oMouse);
+	
 	//Calculating knockback angle
 	direction = point_direction(lastTouch.x, lastTouch.y, x, y,)
 	hsp = lengthdir_x(6,direction);			
