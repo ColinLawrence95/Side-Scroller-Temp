@@ -23,3 +23,4 @@ menu[0] = "Quit";
 menuOptions = array_length_1d(menu);
 menuHover = 3;
 
+//menuSettingsId = room
