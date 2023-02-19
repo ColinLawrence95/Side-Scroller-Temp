@@ -5,7 +5,7 @@ with (oPlayer)
 {
 	if (hascontrol)
 		{
-			hascontol = false;
+			hascontrol = false;
 			Transition(TRANS_MODE.GOTO,other.destination)
 		}
 }

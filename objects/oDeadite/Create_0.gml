@@ -8,3 +8,4 @@ image_yscale = 2;
 hp = 4;
 flash = 0;
 hitFrom = 0;
+enemyID = "";
