@@ -6,6 +6,7 @@ if (canDie = true)
 	//Deducting HP and setting invincable window
 	if (invincable = 0)
 	{
+		lastTouch = oDeadite
 		playerHP = playerHP - 1;
 		//Playing hit sfx
 		audio_play_sound(sfxPlayer_Hit,15,false);

@@ -1,5 +1,5 @@
 /// @desc Actions that happen when player is dead 
-function PlayerDeath()
+function PlayerDeath(lastTouch)
 {
 	with (oGun)
 	{
@@ -8,7 +8,7 @@ function PlayerDeath()
 	//change to oPlayerD
 	instance_change(oPlayerD,true);
 	//Calculating knockback angle
-	direction = point_direction(oDeadite.x, oDeadite.y, x, y,)
+	direction = point_direction(lastTouch.x, lastTouch.y, x, y,)
 	hsp = lengthdir_x(6,direction);			
 	vsp = lengthdir_y(4,direction)-2;
 		

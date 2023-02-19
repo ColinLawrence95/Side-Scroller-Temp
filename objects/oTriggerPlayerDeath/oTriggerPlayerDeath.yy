@@ -1,10 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oRoomEnd",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-  ],
+  "name": "oTriggerPlayerDeath",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -28,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sTrigger",
-    "path": "sprites/sTrigger/sTrigger.yy",
+    "name": "sTriggerPlayerDeath",
+    "path": "sprites/sTriggerPlayerDeath/sTriggerPlayerDeath.yy",
   },
   "spriteMaskId": null,
   "visible": false,
