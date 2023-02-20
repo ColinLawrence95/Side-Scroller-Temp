@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 0.522425,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Deadite",
+    "path": "folders/Sounds/Enemy/Deadite.yy",
   },
   "preload": false,
   "sampleRate": 44100,

@@ -12,8 +12,8 @@
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oShootable","path":"objects/oShootable/oShootable.yy",},"propertyId":{"name":"hp","path":"objects/oShootable/oShootable.yy",},"value":"1",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Entities",
+    "path": "folders/Objects/Entities.yy",
   },
   "parentObjectId": {
     "name": "oShootable",

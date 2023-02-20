@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 84.00977,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Green House",
+    "path": "folders/Sounds/Level/Green House.yy",
   },
   "preload": false,
   "sampleRate": 44100,
