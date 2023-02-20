@@ -1,8 +1,13 @@
-//Collision and gravity.Idle and movement animations
-
 //Gravity
 vsp = vsp + grv;
 
+//makes sure Deadite wont walk off edge
+if (grounded) and (wontFall) and (!place_meeting(x + hsp, y + 1, oWall))
+{
+	hsp = -hsp;
+}
+
+//Collision and gravity.Idle and movement animations
 //Horizontal Collision
 if (place_meeting(x + hsp,y,oWall))
 {
@@ -30,14 +35,15 @@ y = y + vsp;
 //Checking if in Air
 if (!place_meeting(x,y+1,oWall))
 {
+	grounded = false;
 	sprite_index = sDeaditeA;
 	image_speed = 1;
 	if (sign(vsp) < 0) image_index = 0; else image_index = 2;
 }
-
 //Checking if Idle
 else
 {
+	grounded = true;
 	image_speed = 1;
 	if (hsp == 0)
 	{

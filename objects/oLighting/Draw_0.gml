@@ -5,7 +5,7 @@ if (surface_exists(lightSurf))
 	surface_set_target(lightSurf);
 	draw_clear(c_black);
 	
-	//making oCollectable glow
+	//making objects glow
 	with (oCollectable)
 	{
 		BasicLight();
