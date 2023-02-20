@@ -11,7 +11,7 @@ recoil = max(0,recoil - 0.5);
 
 
 
-#region //firing charge shot
+#region firing charge shot
 with (oPersistent)
 {
 	if (pBluePower = true)
@@ -64,7 +64,7 @@ if (gBluePower = true) and (gChargeShot = true)
 
 else
 {
-#region //firing basic gun
+#region firing basic gun
 {
 	if (mouse_check_button (mb_left)) and (firingDelay <0)
 	{

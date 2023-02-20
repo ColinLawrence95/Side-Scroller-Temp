@@ -1,4 +1,4 @@
-#region //Player Input
+#region Player Input
 
 if (hascontrol)
 {
@@ -17,7 +17,7 @@ else
 
 #endregion
 
-#region //God mode
+#region God mode
 if (key_god = 1)
 {
 	canDie = !canDie;
@@ -34,7 +34,7 @@ if (key_god = 1)
 }
 #endregion
 
-#region //Collision and Movement
+#region Collision and Movement
 //Determine Movement
 var move = key_right - key_left;
 hsp = move * walksp;
@@ -75,7 +75,7 @@ if (place_meeting(x,y+vsp,oWall))
 y = y + vsp;
 #endregion
 
-#region //Animation
+#region Animation
 //Checking if in Air
 if (!place_meeting(x,y+1,oWall))
 {
@@ -129,7 +129,7 @@ if (hsp != 0) image_xscale = sign(hsp) * 2;
 
 #endregion
 
-#region //Player Death
+#region Player Death
 //Killing player if hp = 0
 if (playerHP <=0)
 {

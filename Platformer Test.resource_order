@@ -97,5 +97,6 @@
     {"name":"fNPC1","order":1,"path":"fonts/fNPC1/fNPC1.yy",},
     {"name":"oPersistent","order":18,"path":"objects/oPersistent/oPersistent.yy",},
     {"name":"ScreenShake","order":1,"path":"scripts/ScreenShake/ScreenShake.yy",},
+    {"name":"rDeniTest","order":5,"path":"rooms/rDeniTest/rDeniTest.yy",},
   ],
 }

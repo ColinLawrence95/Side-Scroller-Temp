@@ -1,4 +1,4 @@
-#region //Varible Declaration
+#region Varible Declaration
 canDie = true;
 hsp = 0;
 vsp = 0;

@@ -1,4 +1,4 @@
-#region //Collision and gravity.
+#region Collision and gravity.
 //Gravity
 vsp = vsp + grv;
 

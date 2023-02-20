@@ -135,6 +135,7 @@
     {"id":{"name":"oPersistent","path":"objects/oPersistent/oPersistent.yy",},"order":18,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":0,},
     {"id":{"name":"ScreenShake","path":"scripts/ScreenShake/ScreenShake.yy",},"order":1,},
+    {"id":{"name":"rDeniTest","path":"rooms/rDeniTest/rDeniTest.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "RoomOrderNodes": [
@@ -143,6 +144,7 @@
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"roomId":{"name":"rColinTest","path":"rooms/rColinTest/rColinTest.yy",},},
+    {"roomId":{"name":"rDeniTest","path":"rooms/rDeniTest/rDeniTest.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
