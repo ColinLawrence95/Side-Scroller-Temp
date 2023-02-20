@@ -1,4 +1,5 @@
-//Player Input
+#region //Player Input
+
 if (hascontrol)
 {
 	key_left = keyboard_check(vk_left) or keyboard_check(ord("A"));
@@ -13,7 +14,10 @@ else
 	key_jump = 0;
 	key_god = 0;
 }
-//god mode
+
+#endregion
+
+#region //God mode
 if (key_god = 1)
 {
 	canDie = !canDie;
@@ -28,7 +32,9 @@ if (key_god = 1)
 		show_debug_message("GOD MODE ON");
 	}
 }
+#endregion
 
+#region //Collision and Movement
 //Determine Movement
 var move = key_right - key_left;
 hsp = move * walksp;
@@ -37,9 +43,11 @@ hsp = move * walksp;
 vsp = vsp + grv;
 
 //Checking if Player is On Floor to Jump
-if (place_meeting (x,y+1,oWall)) and (key_jump)
+coyote -=1;
+if (coyote > 0) and (key_jump)
 {
 	vsp = -7.5;
+	coyote = 0;
 	//Playing Jump SFX
 	audio_play_sound(sfxPlayer_Jump,6,false);
 }
@@ -65,8 +73,9 @@ if (place_meeting(x,y+vsp,oWall))
 	vsp = 0;
 }
 y = y + vsp;
+#endregion
 
-//Animation
+#region //Animation
 //Checking if in Air
 if (!place_meeting(x,y+1,oWall))
 {
@@ -93,6 +102,7 @@ if (!place_meeting(x,y+1,oWall))
 //Checking if Idle
 else
 {
+	coyote = 10;
 	if (sprite_index == sPlayerA)
 	{
 		landingSound = audio_play_sound(sfxPlayer_Landing,4,false);
@@ -117,8 +127,12 @@ else
 // Flipping sprite if moving left
 if (hsp != 0) image_xscale = sign(hsp) * 2;
 
+#endregion
+
+#region //Player Death
 //Killing player if hp = 0
 if (playerHP <=0)
 {
 	PlayerDeath(lastTouch);
 }
+#endregion

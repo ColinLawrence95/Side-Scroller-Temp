@@ -1,4 +1,4 @@
-//Playing death animation and correctly orienting it
+#region //Playing death animation and correctly orienting it
 if (hp <=0)
 {
 	with (instance_create_layer(x,y,layer,oDeaditeD))
@@ -14,3 +14,4 @@ if (hp <=0)
 	
 	instance_destroy()
 }
+#endregion

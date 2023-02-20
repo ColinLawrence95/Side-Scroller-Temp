@@ -1,3 +1,4 @@
+#region //Movement and Collision
 //Gravity
 vsp = vsp + grv;
 
@@ -29,8 +30,9 @@ if (place_meeting(x,y+vsp,oWall))
 	vsp = 0;
 }
 y = y + vsp;
+#endregion
 
-//Animation
+#region //Animation
 
 //Checking if in Air
 if (!place_meeting(x,y+1,oWall))
@@ -59,4 +61,4 @@ else
 
 // Flipping sprite if moving left
 if (hsp != 0) image_xscale = sign(hsp) * 2;
-
+#endregion

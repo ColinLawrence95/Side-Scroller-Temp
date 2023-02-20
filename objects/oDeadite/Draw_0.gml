@@ -1,4 +1,4 @@
-//Setting hit flash
+#region//Setting hit flash
 draw_self();
 
 if (flash > 0)
@@ -8,3 +8,4 @@ if (flash > 0)
 	draw_self();
 	shader_reset();
 }
+#endregion

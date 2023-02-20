@@ -1,7 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-//Collision and gravity.Idle and movement animations
-
+#region //Collision and gravity.
 //Gravity
 vsp = vsp + grv;
 
@@ -26,3 +23,4 @@ if (place_meeting(x,y+vsp,oWall))
 	vsp = 0;
 }
 y = y + vsp;
+#endregion

@@ -1,5 +1,4 @@
-// Setting collision
-
+#region //Collision and Gravity
 if (done == 0)
 {
 	//Gravity
@@ -34,4 +33,4 @@ if (done == 0)
 	}
 	y = y + vsp;
 }
-
+#endregion
