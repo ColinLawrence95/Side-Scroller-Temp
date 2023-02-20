@@ -8,7 +8,6 @@
   "inheritLayers": false,
   "instanceCreationOrder": [
     {"name":"inst_1DCD9BC9_1","path":"rooms/Room2/Room2.yy",},
-    {"name":"inst_39817E35_1","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_41554245_1","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_784420D3_1","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_1C4C076B_1","path":"rooms/Room2/Room2.yy",},
@@ -199,6 +198,7 @@
     {"name":"inst_6579A512_1","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_573811C3_1","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_9535006_1","path":"rooms/Room2/Room2.yy",},
+    {"name":"inst_2986DBFB","path":"rooms/Room2/Room2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -220,7 +220,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_9535006_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oDeadite","path":"objects/oDeadite/oDeadite.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":576.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Gun","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_39817E35_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oGun","path":"objects/oGun/oGun.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":256.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2986DBFB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oGun","path":"objects/oGun/oGun.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":256.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"tTilesShip","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":45,"SerialiseWidth":108,"TileCompressedData":[
 -329,-2147483648,59,345,390,391,392,393,394,395,396,397,398,399,400,401,390,391,392,393,394,395,396,397,398,399,400,401,390,391,392,393,394,395,396,397,398,399,400,401,390,391,392,393,394,395,396,397,398,399,400,401,392,393,394,395,396,397,398,399,400,347,-49,-2147483648,1,535,-23,498,-13,465,-21,466,1,417,-49,-2147483648,3,415,498,454,-21,498,-6,465,4,460,465,465,454,-3,465,-21,466,1,447,-49,-2147483648,1,445,-10,498,1,454,-5,498,1,454,-6,

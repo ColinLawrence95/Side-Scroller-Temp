@@ -1,0 +1,2 @@
+pBluePower = false;
+pChargeShot = false;
