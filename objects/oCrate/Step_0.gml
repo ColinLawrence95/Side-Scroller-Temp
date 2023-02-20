@@ -1,13 +1,28 @@
 //Gravity
-vsp = vsp + grv;
+	vsp = vsp + grv;
 
-if (place_meeting(x,y+vsp,oWall))
-{
-	while (!place_meeting(x,y+ sign(vsp),oWall))
+	//Vertical Collision
+	if (place_meeting(x,y+vsp,oWall))
 	{
-		y = y + sign(vsp);
+		while (!place_meeting(x,y + sign(vsp),oWall))
+		{
+			y = y + sign(vsp);
+		}
+		vsp = 0;
 	}
-	vsp = 0;
-}
-y = y + vsp;
+	y = y + vsp;
+	
+	//Vertical Collision
+	if (place_meeting(x,y+vsp,crateWall))
+	{
+		while (!place_meeting(x,y + sign(vsp),crateWall))
+		{
+			y = y + sign(vsp);
+		}
+		vsp = 0;
+	}
+	y = y + vsp;
+
+
+
 
