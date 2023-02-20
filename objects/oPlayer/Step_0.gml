@@ -107,7 +107,14 @@ else
 	{
 		landingSound = audio_play_sound(sfxPlayer_Landing,4,false);
 		audio_sound_pitch(landingSound,random_range(0.5,1.5));
-
+		playerFeetAtLand = bbox_bottom;
+		repeat(5)
+		{
+			with(instance_create_layer(x, playerFeetAtLand, "Effects", oDust))
+			{
+				vsp = 0;
+			}
+		}
 	}
 	
 	image_speed = 1;

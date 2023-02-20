@@ -93,6 +93,7 @@
     {"name":"sPlayerR","order":3,"path":"sprites/sPlayerR/sPlayerR.yy",},
     {"name":"sText_Marker","order":1,"path":"sprites/sText_Marker/sText_Marker.yy",},
     {"name":"sTilesShip","order":2,"path":"sprites/sTilesShip/sTilesShip.yy",},
+    {"name":"oDust","order":21,"path":"objects/oDust/oDust.yy",},
     {"name":"sTrigger","order":3,"path":"sprites/sTrigger/sTrigger.yy",},
     {"name":"sTriggerPlayerDeath","order":4,"path":"sprites/sTriggerPlayerDeath/sTriggerPlayerDeath.yy",},
     {"name":"sTriggerRoomEnd","order":5,"path":"sprites/sTriggerRoomEnd/sTriggerRoomEnd.yy",},

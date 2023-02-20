@@ -134,6 +134,7 @@
     {"id":{"name":"sPlayerR","path":"sprites/sPlayerR/sPlayerR.yy",},"order":3,},
     {"id":{"name":"sText_Marker","path":"sprites/sText_Marker/sText_Marker.yy",},"order":1,},
     {"id":{"name":"sTilesShip","path":"sprites/sTilesShip/sTilesShip.yy",},"order":2,},
+    {"id":{"name":"oDust","path":"objects/oDust/oDust.yy",},"order":21,},
     {"id":{"name":"sTrigger","path":"sprites/sTrigger/sTrigger.yy",},"order":3,},
     {"id":{"name":"sTriggerPlayerDeath","path":"sprites/sTriggerPlayerDeath/sTriggerPlayerDeath.yy",},"order":4,},
     {"id":{"name":"sTriggerRoomEnd","path":"sprites/sTriggerRoomEnd/sTriggerRoomEnd.yy",},"order":5,},
@@ -142,8 +143,8 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},},
-    {"roomId":{"name":"rColinTest","path":"rooms/rColinTest/rColinTest.yy",},},
     {"roomId":{"name":"rDeniTest","path":"rooms/rDeniTest/rDeniTest.yy",},},
+    {"roomId":{"name":"rColinTest","path":"rooms/rColinTest/rColinTest.yy",},},
     {"roomId":{"name":"rMenu_Settings","path":"rooms/rMenu_Settings/rMenu_Settings.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},

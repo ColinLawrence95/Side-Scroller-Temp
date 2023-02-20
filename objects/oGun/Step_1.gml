@@ -38,7 +38,7 @@ if (gBluePower = true) and (gChargeShot = true)
 	//Playing gunshot sfx
 	audio_play_sound(sfxPlayer_Basic_Shot,7,false);
 	
-	with (instance_create_layer (x,y,"Bullets",oChargeShot)) 
+	with (instance_create_layer (x,y,"Effects",oChargeShot)) 
 	{
 		speed = 50;
 		direction = other.image_angle;
@@ -74,7 +74,7 @@ else
 		//Playing gunshot sfx
 		audio_play_sound(sfxPlayer_Basic_Shot,7,false);
 	
-		with (instance_create_layer (x,y,"Bullets",oBullet)) 
+		with (instance_create_layer (x,y,"Effects",oBullet)) 
 		{
 			speed = 15;
 			direction = other.image_angle;
