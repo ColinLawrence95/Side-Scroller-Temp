@@ -11,7 +11,10 @@ if (hp <=0)
 	}
 	
 	
-	
+	with (deaditeGun)
+	{
+		instance_destroy();
+	}
 	instance_destroy()
 }
 #endregion
