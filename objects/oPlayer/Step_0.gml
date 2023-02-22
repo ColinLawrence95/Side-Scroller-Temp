@@ -6,6 +6,7 @@ if (hascontrol)
 	key_right = keyboard_check(vk_right) or keyboard_check(ord("D"));
 	key_jump = keyboard_check_pressed (vk_space);
 	key_god = keyboard_check_pressed(ord("L"));
+	key_crouch = keyboard_check(ord("S"));
 }
 else
 {
@@ -13,6 +14,7 @@ else
 	key_left = 0;
 	key_jump = 0;
 	key_god = 0;
+	key_crouch = 0;
 }
 
 #endregion
@@ -23,4 +25,5 @@ stateOnGround();
 stateJump();
 stateInAir();
 stateGod();
+stateCrouch();
 stateDead();

@@ -14,13 +14,13 @@ if (canDie = true)
 		playerHP = playerHP - 1;
 		//Playing hit sfx
 		audio_play_sound(sfxPlayer_Hit,15,false);
-		playerFlash = 3;
+		playerFlash = 30;
 		invincable = 1;
 		show_debug_message(playerHP);
 		
 		if (!alarm[0])
 		{
-			alarm[0] = 60;
+			alarm[0] = 30;
 		}
 	}	
 }

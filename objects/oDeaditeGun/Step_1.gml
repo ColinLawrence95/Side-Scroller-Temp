@@ -12,7 +12,7 @@ if (instance_exists(oPlayer))
 	}
 	if (point_distance(oPlayer.x, oPlayer.y, x, y,) < 780)
 	{
-		image_angle = point_direction(x, y, oPlayer.x, oPlayer.y);
+		image_angle = point_direction(x, y, oPlayer.x, oPlayer.y + 20);
 		countdown = countdown - 1;
 		if(countdown <0)
 		{

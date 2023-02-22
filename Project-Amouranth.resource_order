@@ -67,6 +67,7 @@
     {"name":"shWhite","order":1,"path":"shaders/shWhite/shWhite.yy",},
     {"name":"sfxDeadite_Hit","order":1,"path":"sounds/sfxDeadite_Hit/sfxDeadite_Hit.yy",},
     {"name":"sfxGH2_Music","order":1,"path":"sounds/sfxGH2_Music/sfxGH2_Music.yy",},
+    {"name":"sPlayerC","order":4,"path":"sprites/sPlayerC/sPlayerC.yy",},
     {"name":"sfxMenu_Music","order":1,"path":"sounds/sfxMenu_Music/sfxMenu_Music.yy",},
     {"name":"sfxMenu_Option","order":2,"path":"sounds/sfxMenu_Option/sfxMenu_Option.yy",},
     {"name":"sfxMenu_Settings_Music","order":3,"path":"sounds/sfxMenu_Settings_Music/sfxMenu_Settings_Music.yy",},
