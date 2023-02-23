@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oRedPowerUp",
+  "name": "oPinkPowerUp",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sRedPowerUp",
-    "path": "sprites/sRedPowerUp/sRedPowerUp.yy",
+    "name": "sPinkPowerUp",
+    "path": "sprites/sPinkPowerUp/sPinkPowerUp.yy",
   },
   "spriteMaskId": null,
   "visible": true,

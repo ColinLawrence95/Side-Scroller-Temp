@@ -1,4 +1,4 @@
 pBluePower = false;
 pChargeShot = false;
-pRedPower = false;
+pPinkPower = false;
 pCanDie = true;

@@ -120,7 +120,7 @@ playerJump = function() //Player Jump
 
 playerDash = function() //Player Dash
 {
-	if (oPersistent.pRedPower) and (canDash) and (key_dash)
+	if (oPersistent.pPinkPower) and (canDash) and (key_dash)
 	{
 		canDash = false;
 		canJump = 0;
