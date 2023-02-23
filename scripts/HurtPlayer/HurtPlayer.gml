@@ -5,7 +5,7 @@ function HurtPlayer()
 /// @description Damage player on contact
 
 //Seeing if god mode is on
-if (canDie = true)
+if (oPersistent.pCanDie = true)
 {
 	//Deducting HP and setting invincable window
 	if (invincable = 0)

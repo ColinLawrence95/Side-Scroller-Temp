@@ -11,11 +11,13 @@ playerHP = 3;
 invincable = 0;
 playerFlash = 0;
 canJump = 0;
-canDie = true;
+canDash = true;
+dashTime = 0.4; //seconds
+dashSpeed = 3;
 
 
 
-stateMain = function() //Player Main
+playerMain = function() //Player Main
 {
 	
 	//Determine Movement
@@ -48,11 +50,12 @@ stateMain = function() //Player Main
 	if (hsp != 0) image_xscale = sign(hsp) * 2; // Flipping sprite depnding on direction
 }
 
-stateOnGround = function() //Player on Ground
+playerOnGround = function() //Player on Ground
 {
 	if (place_meeting(x,y+1,oWall)) //If not in air
 	{
 		canJump = 10;
+		canDash = true;
 		if (sprite_index == sPlayerA)
 		{
 			landingSound = audio_play_sound(sfxPlayer_Landing,4,false);
@@ -81,19 +84,70 @@ stateOnGround = function() //Player on Ground
 	}
 }
 
-stateJump = function() //Player Jump
+playerCrouch = function() //Crouch
+{
+	if (key_crouch = 0) and (place_meeting (x, y - 1, oWall))
+	{
+		key_crouch = 1;
+	}
+	
+	if (key_crouch = 1) 
+	{
+		sprite_index = sPlayerC;
+		image_speed = 0;
+		walksp = 2;
+		image_index = 2;
+		mask_index = sPlayerC;
+		oGun.y = oGun.y + 25;
+	}
+	else
+	{
+		mask_index = sPlayer;
+		walksp = 4;
+	}
+}
+
+playerJump = function() //Player Jump
 {
 	canJump -=1;
 	if (canJump > 0) and (key_jump)
 	{
 		vsp = -7.5;
 		canJump = 0;
-		//Playing Jump SFX
 		audio_play_sound(sfxPlayer_Jump,6,false);
 	}
 }
 
-stateInAir = function() //Player in Air
+playerDash = function() //Player Dash
+{
+	if (oPersistent.pRedPower) and (canDash) and (key_dash)
+	{
+		canDash = false;
+		canJump = 0;
+		sDashEffect = audio_play_sound(sfxPlayer_Dash,7,false);
+		audio_sound_pitch(sDashEffect, random_range(0.5,1.5));
+		direction = point_direction(x,y,mouse_x,mouse_y);
+		if (alarm[1] = -1)
+		{
+			speed = dashSpeed;
+			alarm[1] = room_speed * dashTime;
+		}
+	}
+	if (alarm[1] >= 0) //During Dash
+	{
+		if (place_meeting(x + hspeed, y + vspeed, oWall)) 		// Check for wall collisions
+		{
+			speed = 0;
+		}
+		else
+		{
+			x += hspeed;
+			y += vspeed;
+		}
+	}
+}
+
+playerInAir = function() //Player in Air
 {
 	if (!place_meeting(x,y+1,oWall)) 
 	{
@@ -118,7 +172,7 @@ stateInAir = function() //Player in Air
 	}
 }
 
-stateDead = function() //Player Die
+playerDead = function() //Player Die
 {
 	if (playerHP <=0) 
 	{
@@ -126,48 +180,22 @@ stateDead = function() //Player Die
 	}
 }
 
-stateGod = function() //God Mode
+playerGod = function() //God Mode
 {
 
 	if (key_god = 1)
 	{
-		canDie = !canDie;
+		oPersistent.pCanDie = !oPersistent.pCanDie
 	
-		if (canDie = true)
+		if (oPersistent.pCanDie = true)
 		{
 			show_debug_message("GOD MODE OFF");
 		}
-	
 		else
 		{
 			show_debug_message("GOD MODE ON");
 		}
 	}
-
-}
-
-stateCrouch = function() //Crouch
-{
-	if (key_crouch = 0) and (place_meeting (x, y - 1, oWall))
-	{
-		key_crouch = 1;
-	}
-	
-	if (key_crouch = 1) 
-	{
-		sprite_index = sPlayerC;
-		image_speed = 0;
-		walksp = 2;
-		image_index = 2;
-		mask_index = sPlayerC;
-		oGun.y = oGun.y + 25;
-	}
-	else
-	{
-		mask_index = sPlayer;
-		walksp = 4;
-	}
-	
 
 }
 
