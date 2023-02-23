@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Trigger on player touch
 
 lastTouch = oTriggerPlayerDeath;
-playerHP = 0;
+PlayerDeath(lastTouch);

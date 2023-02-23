@@ -49,6 +49,7 @@
     {"name":"oLighting","order":2,"path":"objects/oLighting/oLighting.yy",},
     {"name":"oMenu_Settings","order":1,"path":"objects/oMenu_Settings/oMenu_Settings.yy",},
     {"name":"oMouse","order":2,"path":"objects/oMouse/oMouse.yy",},
+    {"name":"LandingEffect","order":6,"path":"scripts/LandingEffect/LandingEffect.yy",},
     {"name":"oPersistent","order":1,"path":"objects/oPersistent/oPersistent.yy",},
     {"name":"oPlayerD","order":1,"path":"objects/oPlayerD/oPlayerD.yy",},
     {"name":"oPinkPowerUp","order":4,"path":"objects/oPinkPowerUp/oPinkPowerUp.yy",},

@@ -1,4 +1,4 @@
-#region Player Input
+#region Code that should always be checked every step
 
 if (hascontrol)
 {
@@ -21,12 +21,58 @@ else
 
 #endregion
 
-//player States
-playerMain();
-playerOnGround();
-playerJump();
-playerDash();
-playerInAir();
-playerGod();
-playerCrouch();
-playerDead();
+
+
+//Determine Movement
+hsp = (key_right - key_left) * walksp;
+
+//Gravity
+vsp += grv;
+
+//Horizontal Collision
+if (place_meeting(x + hsp, y, oWall))
+{
+	while (!place_meeting(x + sign(hsp), y, oWall))
+	{
+		x += sign(hsp);
+	}
+	hsp = 0;
+}
+x += hsp;
+
+//Vertical Collision
+if (place_meeting(x, y + vsp, oWall)) 
+{
+	while (!place_meeting(x, y + sign(vsp), oWall))
+	{
+		y += sign(vsp);
+	}
+	vsp = 0;
+}
+y += vsp;
+
+// Flipping sprite depnding on direction
+if (hsp != 0) image_xscale = sign(hsp) * 2; 
+	
+//Dtect if player dies
+if (playerHP <=0) 
+{
+	state = playerDead;
+}
+
+if (key_god = 1)
+{
+	oPersistent.pCanDie = !oPersistent.pCanDie
+
+	if (oPersistent.pCanDie = true)
+	{
+		show_debug_message("GOD MODE OFF");
+	}
+	else
+	{
+		show_debug_message("GOD MODE ON");
+	}
+}
+
+//player state
+state();
