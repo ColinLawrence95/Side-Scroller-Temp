@@ -1,9 +1,8 @@
-///@desc Setting hit flash
 draw_self();
 
-if (playerFlash > 0)
+if (PlayerValues.playerFlash > 0)
 {
-	playerFlash = playerFlash - 1;
+	PlayerValues.playerFlash = PlayerValues.playerFlash - 1;
 	shader_set(shRed);
 	draw_self();
 	shader_reset();

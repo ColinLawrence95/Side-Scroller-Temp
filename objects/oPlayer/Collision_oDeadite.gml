@@ -1,1 +1,1 @@
-HurtPlayer();
+HurtPlayer(oDeadite);

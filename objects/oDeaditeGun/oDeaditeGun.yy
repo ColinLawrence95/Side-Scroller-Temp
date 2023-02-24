@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Weapons",
-    "path": "folders/Objects/Weapons.yy",
+    "name": "Deadite",
+    "path": "folders/Objects/Enemy/Deadite.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -1,2 +1,2 @@
 /// @desc invincability timer
-invincable = 0;
+PlayerValues.invincable = 0;
