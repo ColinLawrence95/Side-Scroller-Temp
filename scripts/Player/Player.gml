@@ -2,13 +2,13 @@ function inputCheck()
 {
 	if (hascontrol) 
 	{
-	key_left = keyboard_check(vk_left) or keyboard_check(ord("A"));
-	key_right = keyboard_check(vk_right) or keyboard_check(ord("D"));
-	key_jump = keyboard_check_pressed (vk_space);
-	key_dash = keyboard_check_pressed (vk_shift);
-	key_god = keyboard_check_pressed(ord("L"));
-	key_crouch = keyboard_check(ord("S"));
-	move = key_right - key_left;
+		key_left = keyboard_check(vk_left) or keyboard_check(ord("A"));
+		key_right = keyboard_check(vk_right) or keyboard_check(ord("D"));
+		key_jump = keyboard_check_pressed (vk_space);
+		key_dash = keyboard_check_pressed (vk_shift);
+		key_god = keyboard_check_pressed(ord("L"));
+		key_crouch = keyboard_check(ord("S"));
+		move = key_right - key_left;
 	}
 	else
 	{
@@ -20,6 +20,7 @@ function inputCheck()
 		key_crouch = 0;
 	}
 }
+
 function movement()
 {
 	//horizontal movement
@@ -40,32 +41,31 @@ function movement()
 	}
 	x = x + hsp;
 }
-function HurtPlayer(enemyID)
-{
-/// @description Damage player on contact
 
-//Seeing if god mode is on
-if (oPersistent.pCanDie = true)
+function HurtPlayer(enemyID) //Damage player on contact
 {
-	//Deducting HP and setting invincable window
-	if (invincable = 0)
+	//Seeing if god mode is on
+	if (oPersistent.pCanDie = true)
 	{
-		lastTouch = enemyID;
-		playerHP = playerHP - 1;
-		//Playing hit sfx
-		audio_play_sound(sfxPlayer_Hit,15,false);
-		playerFlash = 30;
-		invincable = 1;
-		show_debug_message(playerHP);
-		
-		if (!alarm[0])
+		//Deducting HP and setting invincable window
+		if (invincable = 0)
 		{
-			alarm[0] = 30;
-		}
-	}	
+			lastTouch = enemyID;
+			playerHP = playerHP - 1;
+			//Playing hit sfx
+			audio_play_sound(sfxPlayer_Hit,15,false);
+			playerFlash = 30;
+			invincable = 1;
+			show_debug_message(playerHP);
+		
+			if (!alarm[0])
+			{
+				alarm[0] = 30;
+			}
+		}	
+	}
 }
 
-}
 function godMode()
 {
 	if (key_god = 1)
@@ -82,11 +82,12 @@ function godMode()
 	}
 }
 
-function idleStateFunction()
+function playerIdleState()
 {
 	//Idle Animation
 	image_speed = 1;
 	sprite_index = sPlayer;
+	mask_index = sPlayer;
 	canJump = 10;
 	//Change State
 	if(hsp == walksp) or (hsp == -walksp)
@@ -112,12 +113,14 @@ function idleStateFunction()
 		playerState = playerStates.death;
 	}
 }
-function walkStateFunction()
+
+function playerWalkState()
 {
 	//Run Animation
 	walksp = 4;
 	image_speed = 1;
 	sprite_index = sPlayerR;
+	mask_index = sPlayer;
 	canJump = 10;
 	if(vsp < 0)
 	{
@@ -141,7 +144,8 @@ function walkStateFunction()
 		playerState = playerStates.death;
 	}	
 }
-function jumpingStateFunction()
+
+function playerJumpingState()
 {
 	//Jump Animation
 	sprite_index = sPlayerA;
@@ -181,7 +185,8 @@ function jumpingStateFunction()
 		walksp = 2;
 	}
 }
-function fallingStateFunction()
+
+function playerFallingState()
 {
 	sprite_index = sPlayerA;
 	image_speed = 0;
@@ -227,7 +232,8 @@ function fallingStateFunction()
 	}
 
 }
-function crouchStateFunction()
+
+function playerCrouchState()
 {
 	canJump = 0;
 	image_speed = 0;
@@ -262,7 +268,8 @@ function crouchStateFunction()
 		playerState = playerStates.falling;
 	}
 }
-function dashStateFunction()
+
+function playerDashState()
 {
 	canDash = false;
 	canJump = 0;
@@ -292,13 +299,14 @@ function dashStateFunction()
 	}
 	
 }
-function deathStateFunction()
+
+function playerDeathState()
 {
 	with (oGun)
 	{
-	instance_destroy();
+		instance_destroy();
 	}
-	//change to oPlayerD
+	//Change to oPlayerD
 	instance_change(oPlayerD,true);
 	//Delete mouse object
 	instance_destroy(oMouse);
@@ -308,7 +316,5 @@ function deathStateFunction()
 	hsp = lengthdir_x(6,direction);			
 	vsp = lengthdir_y(4,direction)-2;
 		
-	//Orienting death sprite
-
 }
 
