@@ -11,7 +11,6 @@ function applyGravity()
 		}
 		vsp = 0;
 	}
-	
 	y = y + vsp;
 }
 

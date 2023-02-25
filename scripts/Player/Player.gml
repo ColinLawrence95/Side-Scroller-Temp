@@ -23,6 +23,7 @@ function inputCheck()
 
 function movement()
 {
+
 	//horizontal movement
 	hsp = move * walksp;
 	//Jump
@@ -40,30 +41,6 @@ function movement()
 		hsp = 0;
 	}
 	x = x + hsp;
-}
-
-function HurtPlayer(enemyID) //Damage player on contact
-{
-	//Seeing if god mode is on
-	if (oPersistent.pCanDie = true)
-	{
-		//Deducting HP and setting invincable window
-		if (invincable = 0)
-		{
-			lastTouch = enemyID;
-			playerHP = playerHP - 1;
-			//Playing hit sfx
-			audio_play_sound(sfxPlayer_Hit,15,false);
-			playerFlash = 30;
-			invincable = 1;
-			show_debug_message(playerHP);
-		
-			if (!alarm[0])
-			{
-				alarm[0] = 30;
-			}
-		}	
-	}
 }
 
 function godMode()
@@ -89,18 +66,19 @@ function playerIdleState()
 	sprite_index = sPlayer;
 	mask_index = sPlayer;
 	canJump = 10;
+	canDash = 0;
 	//Change State
-	if(hsp == walksp) or (hsp == -walksp)
+	if (hsp == walksp) or (hsp == -walksp)
 	{
 		playerState = playerStates.walk;
 	}
 	//Change State
-	if(vsp < 0)
+	if (vsp < 0)
 	{
 		playerState = playerStates.jumping;
 	}
 	//Change State
-	if(vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
+	if (vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
 	{
 		playerState = playerStates.falling;
 	}
@@ -122,11 +100,12 @@ function playerWalkState()
 	sprite_index = sPlayerR;
 	mask_index = sPlayer;
 	canJump = 10;
-	if(vsp < 0)
+	canDash = 0;
+	if (vsp < 0)
 	{
 		playerState = playerStates.jumping;
 	}
-	if(vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
+	if (vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
 	{
 		playerState = playerStates.falling;
 	}
@@ -151,25 +130,26 @@ function playerJumpingState()
 	sprite_index = sPlayerA;
 	image_speed = 0;
 	canJump = 0;
-		if (vsp < -1)
-		{
-			image_index = 0;
-		}
-		if (vsp >= -1 && vsp <= 0  )
-		{
-			image_index = 1;
-		}
-		if (vsp >= 0 && vsp <= 1  )
-		{
-			image_index = 2;
-		}
+	if (vsp < -1)
+	{
+		image_index = 0;
+	}
+	if (vsp >= -1 && vsp <= 0  )
+	{
+		image_index = 1;
+	}
+	if (vsp >= 0 && vsp <= 1  )
+	{
+		image_index = 2;
+	}
 	//Change State
-	if(vsp > 0)
+	if (vsp > 0)
 	{
 		playerState = playerStates.falling;
 	}
-	if(oPersistent.pPinkPower) and (canDash) and (key_dash)
+	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash)
 	{
+		canJump = 0;
 		playerState = playerStates.dash;
 	}
 	if (playerHP <= 0)
@@ -218,8 +198,9 @@ function playerFallingState()
 			playerState = playerStates.walk;
 		}	
 	}
-	if(oPersistent.pPinkPower) and (canDash) and (key_dash)
+	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash)
 	{
+		canJump = 0;
 		playerState = playerStates.dash;
 	}
 	if (playerHP <= 0)
@@ -271,33 +252,47 @@ function playerCrouchState()
 
 function playerDashState()
 {
-	canDash = false;
-	canJump = 0;
-	sDashEffect = audio_play_sound(sfxPlayer_Dash,7,false);
-	audio_sound_pitch(sDashEffect, random_range(0.5,1.5));
-	
-	direction = point_direction(x,y,mouse_x,mouse_y);
-	if (alarm[1] = -1)
+
+	if (place_meeting(x + hspeed, y + vspeed, oObstalce))
 	{
-		speed = dashSpeed;
-		alarm[1] = room_speed * dashTime;
-	}
-	
-	if (alarm[1] >= 0) //During Dash
-	if (place_meeting(x + hspeed, y + vspeed, oWall)) 		// Check for wall collisions
-	{
-		speed = 0;
-	}
+	    // Stop the dash if the player hits a wall
+	    dashHitWall = true;
+	    hspeed = 0;
+		vspeed = 0;
+	} 
 	else
 	{
-		x += hspeed;
-		y += vspeed;
-	}
-	if (playerHP <= 0)
-	{
-		playerState = playerStates.death;
+	    // Move the player
+	    if (sign(hsp) == 1) {
+	        dashDirection = 1;
+	    } else if (sign(hsp) == -1) {
+	        dashDirection = -1;
+	    } else {
+	        dashDirection = 0;
+	    }
+	    hspeed = dashDirection * dashSpeed;
+	    canDash++;
 	}
 	
+	if (canDash >= dashTime || dashHitWall)
+	{
+		dashHitWall = false;
+		if (vsp < 0)
+		{
+			hspeed = 0;
+			playerState = playerStates.jumping;
+		}
+		if (vsp >= 0) and (!place_meeting (x, y + 1, oObstalce))
+		{
+			hspeed = 0;
+			playerState = playerStates.falling;
+		}
+		if (hsp == 0)
+		{
+			hspeed = 0;
+			playerState = playerStates.idle;
+		}
+	}
 }
 
 function playerDeathState()
@@ -318,3 +313,26 @@ function playerDeathState()
 		
 }
 
+function HurtPlayer(enemyID) //Damage player on contact
+{
+	//Seeing if god mode is on
+	if (oPersistent.pCanDie = true)
+	{
+		//Deducting HP and setting invincable window
+		if (invincable = 0)
+		{
+			lastTouch = enemyID;
+			playerHP = playerHP - 1;
+			//Playing hit sfx
+			audio_play_sound(sfxPlayer_Hit,15,false);
+			playerFlash = 30;
+			invincable = 1;
+			show_debug_message(playerHP);
+		
+			if (!alarm[0])
+			{
+				alarm[0] = 30;
+			}
+		}	
+	}
+}
