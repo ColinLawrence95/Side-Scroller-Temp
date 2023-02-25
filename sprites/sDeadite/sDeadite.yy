@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sDeadite",
   "bbox_bottom": 47,
-  "bbox_left": 18,
+  "bbox_left": 19,
   "bbox_right": 28,
   "bbox_top": 16,
   "bboxMode": 2,

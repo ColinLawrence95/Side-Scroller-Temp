@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "sDeaditeGun",
-  "bbox_bottom": 21,
+  "bbox_bottom": 23,
   "bbox_left": 3,
   "bbox_right": 31,
   "bbox_top": 11,

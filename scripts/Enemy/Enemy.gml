@@ -21,15 +21,15 @@ function enemyMovement()
 		{
 			x += sign(hsp);
 		}
-		hsp = 0;
+		walksp = -walksp;
 	}
 	x = x + hsp;
 }
 
 function enemyIdleStateFunction()
 {
+	sprite_index = sDeadite;
 	walksp = 0;
-	
 	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
 		{
 			foundPlayer = true;
@@ -57,10 +57,12 @@ function enemyIdleStateFunction()
 
 function enemyPatrolStateFunction()
 {
-		if (!alarm[1])
-		{
-			alarm[1] = patrolToIdol;
-		}
+	show_debug_message(hsp);
+	sprite_index = sDeaditeR;
+	if (!alarm[1])
+	{
+		alarm[1] = patrolToIdol;
+	}
 	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
 	{
 		foundPlayer = true;
@@ -71,7 +73,7 @@ function enemyPatrolStateFunction()
 	}
 	if (foundPlayer)
 	{
-		//enemyState = enemyStates.aware;
+		enemyState = enemyStates.aware;
 	}
 	if (hp <= 0)
 	{
@@ -83,7 +85,7 @@ function enemyAwareStateFunction()
 {
 	if (distanceToPlayer <= attackRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
 	{
-		//enemyState = enemyStates.attack;
+		enemyState = enemyStates.attack;
 	}
 	if(!foundPlayer)
 	{
@@ -101,7 +103,7 @@ function enemyAttackStateFunction()
 {
 	if (distanceToPlayer > attackRange)
 	{
-		//enemyState = enemyStates.aware;
+		enemyState = enemyStates.aware;
 	}
 	if (hp <= 0)
 	{
@@ -141,10 +143,11 @@ function enemyDeathStateFunction()
 	instance_destroy()
 }
 
-function hurtEnemy ()
+function hurtEnemy()
 {
 	hp = hp - 1;
 	//Playing hit sfx
 	audio_play_sound(sfxPlayer_Hit,15,false);
 	flash = 3
 }
+

@@ -1,7 +1,8 @@
 applyGravity();
 enemyAI();
 enemyMovement();
-//show_debug_message(enemyState);
+spriteOrientation();
+//show_debug_message(walksp);
 
 
 switch (enemyState) 
