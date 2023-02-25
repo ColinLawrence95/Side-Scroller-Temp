@@ -19,7 +19,6 @@ function movement()
 	{
 		vsp = vsp - PlayerValues.vspJump;
 	}
-	
 	//Horizontal Collision
 	if(place_meeting(x+hsp, y, oObstalce))
 	{
@@ -31,22 +30,7 @@ function movement()
 	}
 	x = x + hsp;
 }
-function applyGravity()
-{
-	//Apply Gravity
-	vsp = vsp + grv;
-	//Vertical Collision
-	if (place_meeting(x, y + vsp, oObstalce))
-	{
-		while (!place_meeting(x, y + sign(vsp), oObstalce))
-		{
-			y += sign(vsp);
-		}
-		vsp = 0;
-	}
-	
-	y = y + vsp;
-}
+
 
 function idleStateFunction()
 {
@@ -65,7 +49,7 @@ function idleStateFunction()
 		playerState = playerStates.jumping;
 	}
 	//Change State
-	if(vsp > 0)
+	if(vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
 	{
 		playerState = playerStates.falling;
 	}
@@ -88,7 +72,7 @@ function walkStateFunction()
 	{
 		playerState = playerStates.jumping;
 	}
-	if(vsp > 0)
+	if(vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
 	{
 		playerState = playerStates.falling;
 	}
@@ -104,22 +88,14 @@ function walkStateFunction()
 	if (PlayerValues.playerHP <= 0)
 	{
 		playerState = playerStates.death;
-	}
-	if(hsp >0)
-	{
-		image_xscale = playerXScale;
-	}
-	else if(hsp < 0)
-	{
-		image_xscale = -playerXScale;
-	}
+	}	
 }
 function jumpingStateFunction()
 {
 	//Jump Animation
 	sprite_index = sPlayerA;
 	image_speed = 0;
-	PlayerValues.canJump--;
+	PlayerValues.canJump = 0;
 		if (vsp < -1)
 		{
 			image_index = 0;
@@ -132,19 +108,6 @@ function jumpingStateFunction()
 		{
 			image_index = 2;
 		}
-		if (vsp > 1)
-		{
-			image_index = 3;
-		}
-		
-		if(hsp >0)
-	{
-		image_xscale = playerXScale;
-	}
-	else if(hsp < 0)
-	{
-		image_xscale = -playerXScale;
-	}
 	//Change State
 	if(vsp > 0)
 	{
@@ -158,22 +121,26 @@ function jumpingStateFunction()
 	{
 		playerState = playerStates.death;
 	}
+	if (key_crouch = 1)
+	{
+		playerState = playerStates.crouch;
+	}
 }
 function fallingStateFunction()
 {
+	sprite_index = sPlayerA;
+	image_speed = 0;
+	image_index = 3;
 	PlayerValues.canJump--;
-	if(hsp >0)
-	{
-		image_xscale = playerXScale;
-	}
-	else if(hsp < 0)
-	{
-		image_xscale = -playerXScale;
-	}
-	if(vsp = 0)
+	if(vsp = 0) and (hsp = 0)
 	{
 		LandingEffect();
 		playerState = playerStates.idle;
+	}
+	if (vsp = 0) and (hsp != 0) and (place_meeting (x, y + 1, oObstalce))
+	{
+		LandingEffect();
+		playerState = playerStates.walk;
 	}
 	if(oPersistent.pPinkPower) and (PlayerValues.canDash) and (key_dash)
 	{
@@ -183,16 +150,31 @@ function fallingStateFunction()
 	{
 		playerState = playerStates.death;
 	}
+	if (key_crouch = 1)
+	{
+		playerState = playerStates.crouch;
+	}
 }
 function crouchStateFunction()
 {
-	PlayerValues.canJump = 10;
+	PlayerValues.canJump = 0;
 	image_speed = 0;
 	sprite_index = sPlayerC;
-	image_index = 2;
 	mask_index = sPlayerC;
 	oGun.y = oGun.y + 25;
 	PlayerValues.walksp = 2;
+	if (place_meeting(x,y+1,oObstalce))
+    {
+		PlayerValues.canJump = 10;
+		if (vsp != 0)
+		{
+			 LandingEffect();
+		}
+		if (key_crouch = 0) and (place_meeting (x, y - 1, oObstalce))
+		{
+			key_crouch = 1;
+		}
+    }
 	if (key_crouch = 0)
 	{ 
 		PlayerValues.walksp = 4;
@@ -203,7 +185,6 @@ function crouchStateFunction()
 	{
 		playerState = playerStates.death;
 	}
-
 }
 function dashStateFunction()
 {
@@ -257,11 +238,7 @@ function deathStateFunction()
 		image_xscale = sign(hsp) * 2;
 	}
 }
-
-
-
-
-function HurtPlayer()
+function HurtPlayer(enemyID)
 {
 /// @description Damage player on contact
 
@@ -271,7 +248,7 @@ if (oPersistent.pCanDie = true)
 	//Deducting HP and setting invincable window
 	if (PlayerValues.invincable = 0)
 	{
-		lastTouch = oDeadite;
+		lastTouch = enemyID;
 		PlayerValues.playerHP = PlayerValues.playerHP - 1;
 		//Playing hit sfx
 		audio_play_sound(sfxPlayer_Hit,15,false);

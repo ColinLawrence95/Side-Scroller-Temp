@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "EnemyAI",
+  "name": "Enemy",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

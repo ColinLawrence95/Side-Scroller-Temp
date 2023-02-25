@@ -35,6 +35,7 @@
     {"name":"Tile Sets","order":7,"path":"folders/Tile Sets.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"General","order":8,"path":"scripts/General/General.yy",},
     {"name":"fNPC1","order":1,"path":"fonts/fNPC1/fNPC1.yy",},
     {"name":"oChargeShot","order":1,"path":"objects/oChargeShot/oChargeShot.yy",},
     {"name":"oCollectable","order":1,"path":"objects/oCollectable/oCollectable.yy",},
@@ -68,7 +69,7 @@
     {"name":"Room1","order":2,"path":"rooms/Room1/Room1.yy",},
     {"name":"Room2","order":3,"path":"rooms/Room2/Room2.yy",},
     {"name":"DrawSetText","order":1,"path":"scripts/DrawSetText/DrawSetText.yy",},
-    {"name":"EnemyAI","order":6,"path":"scripts/EnemyAI/EnemyAI.yy",},
+    {"name":"Enemy","order":6,"path":"scripts/Enemy/Enemy.yy",},
     {"name":"LandingEffect","order":6,"path":"scripts/LandingEffect/LandingEffect.yy",},
     {"name":"Player","order":7,"path":"scripts/Player/Player.yy",},
     {"name":"ScreenShake","order":4,"path":"scripts/ScreenShake/ScreenShake.yy",},

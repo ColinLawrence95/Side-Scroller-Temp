@@ -62,6 +62,7 @@
   },
   "resources": [
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},"order":0,},
+    {"id":{"name":"General","path":"scripts/General/General.yy",},"order":8,},
     {"id":{"name":"fNPC1","path":"fonts/fNPC1/fNPC1.yy",},"order":1,},
     {"id":{"name":"oBluePowerUp","path":"objects/oBluePowerUp/oBluePowerUp.yy",},"order":0,},
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},"order":0,},
@@ -107,7 +108,7 @@
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":3,},
     {"id":{"name":"BasicLight","path":"scripts/BasicLight/BasicLight.yy",},"order":0,},
     {"id":{"name":"DrawSetText","path":"scripts/DrawSetText/DrawSetText.yy",},"order":1,},
-    {"id":{"name":"EnemyAI","path":"scripts/EnemyAI/EnemyAI.yy",},"order":6,},
+    {"id":{"name":"Enemy","path":"scripts/Enemy/Enemy.yy",},"order":6,},
     {"id":{"name":"LandingEffect","path":"scripts/LandingEffect/LandingEffect.yy",},"order":6,},
     {"id":{"name":"Player","path":"scripts/Player/Player.yy",},"order":7,},
     {"id":{"name":"ScreenShake","path":"scripts/ScreenShake/ScreenShake.yy",},"order":4,},

@@ -1,6 +1,8 @@
 inputCheck();
 movement();
 applyGravity();
+spriteOrientation();
+show_debug_message(string(playerState));
 
 switch (playerState) 
 {
