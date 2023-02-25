@@ -1,8 +1,8 @@
 /// @description Bullet collision with wall
 //Making bullet destroy on impact with wall
-if (place_meeting(x,y,oWall)) 
+if (place_meeting(x,y,oObstalce)) 
 {
-	while (place_meeting(x,y,oWall))
+	while (place_meeting(x,y,oObstalce))
 	{
 		x -= lengthdir_x(1, direction);
 		y -= lengthdir_y(1, direction);

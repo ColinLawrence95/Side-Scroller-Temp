@@ -9,8 +9,6 @@ if (hp <=0)
 		if (sign(hsp) != 0) image_xscale = sign(hsp) * 2;
 		
 	}
-	
-	
 	with (deaditeGun)
 	{
 		instance_destroy();

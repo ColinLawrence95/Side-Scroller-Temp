@@ -3,7 +3,7 @@ movement();
 applyGravity();
 spriteOrientation();
 godMode();
-show_debug_message(string(playerState));
+
 
 switch (playerState) 
 {

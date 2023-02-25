@@ -14,6 +14,7 @@ function applyGravity()
 	
 	y = y + vsp;
 }
+
 function spriteOrientation()
 {
 	 if (hsp != 0) image_xscale = sign(hsp) * 2; 

@@ -1,4 +1,4 @@
-HurtPlayer(oDeaditeBullet);
+HurtPlayer(oDeadite);
 with (other)
 {
 	instance_destroy();

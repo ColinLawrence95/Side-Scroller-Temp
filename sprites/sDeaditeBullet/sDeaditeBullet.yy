@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Weapons",
-    "path": "folders/Sprites/Weapons.yy",
+    "name": "Deadite",
+    "path": "folders/Sprites/Enemys/Deadite.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
