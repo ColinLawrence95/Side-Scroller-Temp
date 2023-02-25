@@ -17,13 +17,14 @@ hascontrol = true;
 invincable = 0;
 playerFlash = 0;
 canJump = 0;
-canDash = true;
+canDash = 0;
 
 walksp = 4;
 vspJump = 7.5;
 playerHP = 3;
-dashTime = 0.4;
-dashSpeed = 3;
+dashTime = 15;
+dashSpeed = 10
+dashHitWall = 0;
 
 image_xscale = 2;
 image_yscale = 2;
