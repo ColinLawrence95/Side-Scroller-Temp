@@ -4,28 +4,29 @@ applyGravity();
 spriteOrientation();
 godMode();
 
+//show_debug_message(playerState);
 
 switch (playerState) 
 {
     case playerStates.idle:
-        idleStateFunction();
+        playerIdleState();
         break;
 	case playerStates.walk:
-		walkStateFunction();
+		playerWalkState();
         break;
 	case playerStates.jumping:
-        jumpingStateFunction();
+        playerJumpingState();
         break;
 	case playerStates.falling:
-        fallingStateFunction();
+        playerFallingState();
         break;
 	case playerStates.crouch:
-		crouchStateFunction();
+		playerCrouchState();
 		break;
 	case playerStates.dash:
-		dashStateFunction();
+		playerDashState();
 		break;
 	case playerStates.death:
-		deathStateFunction();
+		playerDeathState();
 		break;
 }
