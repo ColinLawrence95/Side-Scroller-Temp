@@ -31,7 +31,6 @@ function movement()
 	x = x + hsp;
 }
 
-
 function idleStateFunction()
 {
 	//Idle Animation
@@ -53,7 +52,7 @@ function idleStateFunction()
 	{
 		playerState = playerStates.falling;
 	}
-	if (key_crouch = 1)
+	if (key_crouch = 1) and (place_meeting(x,y+1,oObstalce))
 	{
 		playerState = playerStates.crouch;
 	}
@@ -65,6 +64,7 @@ function idleStateFunction()
 function walkStateFunction()
 {
 	//Run Animation
+	PlayerValues.walksp = 4;
 	image_speed = 1;
 	sprite_index = sPlayerR;
 	PlayerValues.canJump = 10;
@@ -81,7 +81,7 @@ function walkStateFunction()
 	{
 		playerState = playerStates.idle;
 	}
-	if (key_crouch = 1)
+	if (key_crouch = 1) and (place_meeting(x,y+1,oObstalce))
 	{
 		playerState = playerStates.crouch;
 	}
@@ -123,7 +123,11 @@ function jumpingStateFunction()
 	}
 	if (key_crouch = 1)
 	{
-		playerState = playerStates.crouch;
+		image_speed = 0;
+		sprite_index = sPlayerC;
+		mask_index = sPlayerC;
+		oGun.y = oGun.y + 25;
+		PlayerValues.walksp = 2;
 	}
 }
 function fallingStateFunction()
@@ -132,15 +136,31 @@ function fallingStateFunction()
 	image_speed = 0;
 	image_index = 3;
 	PlayerValues.canJump--;
-	if(vsp = 0) and (hsp = 0)
+	if (key_crouch = 1)
+		{
+			image_speed = 0;
+			sprite_index = sPlayerC;
+			mask_index = sPlayerC;
+			oGun.y = oGun.y + 25;
+			PlayerValues.walksp = 2;	
+		}
+	if (place_meeting(x,y+1,oObstalce))
 	{
-		LandingEffect();
-		playerState = playerStates.idle;
-	}
-	if (vsp = 0) and (hsp != 0) and (place_meeting (x, y + 1, oObstalce))
-	{
-		LandingEffect();
-		playerState = playerStates.walk;
+		if (key_crouch = 1)
+		{
+			LandingEffect();
+			playerState = playerStates.crouch;
+		}
+		else if(vsp = 0) and (hsp = 0) 
+		{
+			LandingEffect();
+			playerState = playerStates.idle;
+		}
+		else if (vsp = 0) and (hsp != 0) 
+		{
+			LandingEffect();
+			playerState = playerStates.walk;
+		}	
 	}
 	if(oPersistent.pPinkPower) and (PlayerValues.canDash) and (key_dash)
 	{
@@ -150,10 +170,11 @@ function fallingStateFunction()
 	{
 		playerState = playerStates.death;
 	}
-	if (key_crouch = 1)
+	if (vsp < 0)
 	{
-		playerState = playerStates.crouch;
+		playerState = playerStates.jumping;
 	}
+
 }
 function crouchStateFunction()
 {
@@ -166,10 +187,6 @@ function crouchStateFunction()
 	if (place_meeting(x,y+1,oObstalce))
     {
 		PlayerValues.canJump = 10;
-		if (vsp != 0)
-		{
-			 LandingEffect();
-		}
 		if (key_crouch = 0) and (place_meeting (x, y - 1, oObstalce))
 		{
 			key_crouch = 1;
@@ -184,6 +201,14 @@ function crouchStateFunction()
 	if (PlayerValues.playerHP <= 0)
 	{
 		playerState = playerStates.death;
+	}
+	if (vsp < 0) and (!place_meeting(x,y+1,oObstalce))
+	{
+		playerState = playerStates.jumping;
+	}
+	if (vsp > 0) and (!place_meeting(x,y+1,oObstalce))
+	{
+		playerState = playerStates.falling;
 	}
 }
 function dashStateFunction()
@@ -263,4 +288,20 @@ if (oPersistent.pCanDie = true)
 	}	
 }
 
+}
+
+function godMode()
+{
+	if (key_god = 1)
+	{
+		oPersistent.pCanDie = !oPersistent.pCanDie
+		if (oPersistent.pCanDie = true)
+	    {
+	        show_debug_message("GOD MODE OFF");
+	    }
+	    else
+	    {
+	        show_debug_message("GOD MODE ON");
+	    }
+	}
 }
