@@ -185,8 +185,8 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},},
-    {"roomId":{"name":"rColinTest","path":"rooms/rColinTest/rColinTest.yy",},},
     {"roomId":{"name":"rDeniTest","path":"rooms/rDeniTest/rDeniTest.yy",},},
+    {"roomId":{"name":"rColinTest","path":"rooms/rColinTest/rColinTest.yy",},},
     {"roomId":{"name":"rMenu_Settings","path":"rooms/rMenu_Settings/rMenu_Settings.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},

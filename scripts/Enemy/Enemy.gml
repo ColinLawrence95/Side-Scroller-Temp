@@ -57,7 +57,7 @@ function enemyIdleStateFunction()
 
 function enemyPatrolStateFunction()
 {
-	show_debug_message(hsp);
+	//show_debug_message(hsp);
 	sprite_index = sDeaditeR;
 	if (!alarm[1])
 	{

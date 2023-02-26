@@ -19,6 +19,8 @@ playerFlash = 0;
 canJump = 0;
 canDash = 0;
 lastTouch = 0;
+footStepPlayed = false;
+last_footstep_sound = noone;
 
 walksp = 4;
 vspJump = 7.5;

@@ -102,6 +102,24 @@ function playerWalkState()
 	mask_index = sPlayer;
 	canJump = 10;
 	canDash = 0;
+	if ((image_index > 0 && image_index < 1) || (image_index > 3 && image_index < 4))
+	{
+	   if (!footStepPlayed)
+	   {
+	      var chosen_sound = choose(sfxPlayer_Step1, sfxPlayer_Step2, sfxPlayer_Step3, sfxPlayer_Step4);
+	      while (chosen_sound == last_footstep_sound)
+	      {
+	         chosen_sound = choose(sfxPlayer_Step1, sfxPlayer_Step2, sfxPlayer_Step3, sfxPlayer_Step4);
+	      }
+	      audio_play_sound(chosen_sound, 0, false);
+	      last_footstep_sound = chosen_sound;
+	      footStepPlayed = true;
+	   }
+	}
+	else
+	{
+	   footStepPlayed = false;
+	}
 	if (vsp < 0)
 	{
 		playerState = playerStates.jumping;
