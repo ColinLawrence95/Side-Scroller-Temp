@@ -10,7 +10,11 @@ recoil = 0;
 owner = oDeadite;
 hsp = 0;
 deaditeGunState = deaditeGunStates.idle;
+deaditeGunIdle = deaditeGunStates.idle;
+deaditeGunAware = deaditeGunStates.aware;
+deaditeGunAttack = deaditeGunStates.attack;
 attackRange = 0;
+detectionRange = 0;
 function deaditeGunIdleStateFunction()
 {
 	x = owner.x;
@@ -22,31 +26,46 @@ function deaditeGunIdleStateFunction()
 		other.image_xscale = image_xscale;
 		if (enemyState = enemyStates.aware)
 		{
-			other.deaditeGunState = other.deaditeGunStates.aware;
+			other.deaditeGunState = other.deaditeGunAware;
 		}
 	}
 }
 function deaditeGunAwareStateFunction()
 {
-	with(oDeadite)
-	{
-		other.attackRange = attackRange;
-		if (enemyState = enemyStates.attack)
-		{
-			other.deaditeGunState = other.deaditeGunStates.attack;
-		}
-	}
 	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
 	{
-		aimGun(attackRange)
-	}	
+		aimGun(detectionRange)
+	}
+	with(oDeadite)
+	{
+		other.detectionRange = detectionRange;
+		if (enemyState = enemyStates.attack)
+		{
+			other.deaditeGunState = other.deaditeGunAttack;
+		}
+		if (enemyState = enemyStates.idle) or (enemyState = enemyStates.patrol)
+		{
+			other.deaditeGunState = other.deaditeGunIdle;
+		}
+	}
 }
 function deaditeGunAttackStateFunction()
 {
 	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
 	{
-		aimGun(attackRange)
+		aimGun(detectionRange)
 		shootGun();
+	}
+	with (oDeadite)
+	{
+		if (enemyState = enemyStates.idle) or (enemyState = enemyStates.patrol)
+		{
+			other.deaditeGunState = other.deaditeGunIdle;
+		}
+		if (enemyState = enemyStates.aware)
+		{
+			other.deaditeGunState = other.deaditeGunAware;
+		}	
 	}
 }
 function aimGun(attackRange)

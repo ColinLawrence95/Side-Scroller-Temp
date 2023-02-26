@@ -1,3 +1,4 @@
+//show_debug_message(deaditeGunState);
 switch (deaditeGunState) 
 {
     case deaditeGunStates.idle:

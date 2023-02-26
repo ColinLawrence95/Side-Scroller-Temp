@@ -24,34 +24,32 @@ function enemyMovement()
 		walksp = -walksp;
 	}
 	x = x + hsp;
+	
+	if (!place_meeting(x+hsp,y+1,oObstalce))
+	{
+		walksp = -walksp;
+	}
 }
 
 function enemyIdleStateFunction()
 {
 	sprite_index = sDeadite;
 	walksp = 0;
+	idleToPatrol = random_range(idleMinTime,idleMaxTime);
+	if (!alarm[0])
+	{
+		show_debug_message("ALARM 0 SWITCH TO PATROL")
+		//change to patrol state under alarm 0
+		alarm[0] = idleToPatrol;
+	}
 	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
-		{
-			foundPlayer = true;
-		}
-		else
-		{
-			foundPlayer = false;
-		}
-		if (foundPlayer)
-		{
-			enemyState = enemyStates.aware;
-		}
-		idleToPatrol = random_range(idleMinTime,idleMaxTime);
-		if (!alarm[0])
-		{
-			//change to patrol state under alarm 0
-			alarm[0] = idleToPatrol;
-		}
-		if (hp <= 0)
-		{
-			enemyState = enemyStates.death;
-		}
+	{
+		enemyState = enemyStates.aware;
+	}
+	if (hp <= 0)
+	{
+		enemyState = enemyStates.death;
+	}
 		
 }
 
@@ -61,17 +59,9 @@ function enemyPatrolStateFunction()
 	sprite_index = sDeaditeR;
 	if (!alarm[1])
 	{
-		alarm[1] = patrolToIdol;
+		alarm[1] = patrolToIdle;
 	}
 	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
-	{
-		foundPlayer = true;
-	}
-	else
-	{
-		foundPlayer = false;
-	}
-	if (foundPlayer)
 	{
 		enemyState = enemyStates.aware;
 	}
@@ -83,16 +73,33 @@ function enemyPatrolStateFunction()
 
 function enemyAwareStateFunction()
 {
+	walksp = 0
+	sprite_index = sDeadite;
+	if (oPlayer.x > oDeadite.x)
+		{
+			image_xscale = 2;
+		}
+		else
+		{
+			image_xscale = -2;
+		}
 	if (distanceToPlayer <= attackRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
 	{
 		enemyState = enemyStates.attack;
 	}
-	if(!foundPlayer)
+	if (distanceToPlayer < detectionRange) and (distanceToPlayer > attackRange)
 	{
-		enemyState = enemyStates.patrol;
+		alarm_set(0,-1);
+		alarm_set(1,-1);
 	}
 	//De-aggro and switching to patrol state under alarm 0
-	alarm[0] = awareTime;
+	if(distanceToPlayer >= detectionRange)
+	{
+		if(!alarm[0])
+		{
+			alarm[0] = awareTime;
+		}
+	}
 	if (hp <= 0)
 	{
 		enemyState = enemyStates.death;
@@ -101,6 +108,14 @@ function enemyAwareStateFunction()
 
 function enemyAttackStateFunction()
 {
+	if (oPlayer.x > oDeadite.x)
+		{
+			image_xscale = 2;
+		}
+		else
+		{
+			image_xscale = -2;
+		}
 	if (distanceToPlayer > attackRange)
 	{
 		enemyState = enemyStates.aware;

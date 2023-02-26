@@ -24,9 +24,10 @@ idleMinTime = 60;
 idleMaxTime = 300;
 patrolMinTime = 60;
 patrolMaxTime = 300;
-detectionRange = 100;
-attackRange = 50;
+detectionRange = 500;
+attackRange = 400;
 awareTime = 600;
 hitFrom = 0;
 deaditeGun = oDeaditeGun;
 idleToPatrol = 0;
+
