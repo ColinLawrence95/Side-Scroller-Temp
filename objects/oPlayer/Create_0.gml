@@ -18,6 +18,7 @@ invincable = 0;
 playerFlash = 0;
 canJump = 0;
 canDash = 0;
+lastTouch = 0;
 
 walksp = 4;
 vspJump = 7.5;

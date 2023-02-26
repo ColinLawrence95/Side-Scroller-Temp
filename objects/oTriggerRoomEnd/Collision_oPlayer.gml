@@ -1,12 +1,9 @@
-/// @description Moves to room assigned to destination
-
-
 with (oPlayer)
 {
 	if (hascontrol)
 		{
-			hascontol = false;
+			show_debug_message("Got here")
+			hascontrol = false;
 			Transition(TRANS_MODE.GOTO,other.destination)
 		}
 }
-

@@ -18,6 +18,7 @@ function inputCheck()
 		key_dash = 0;
 		key_god = 0;
 		key_crouch = 0;
+		move = 0;
 	}
 }
 
