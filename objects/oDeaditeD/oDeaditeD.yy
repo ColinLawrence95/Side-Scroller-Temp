@@ -33,6 +33,9 @@
     "name": "sDeaditeD",
     "path": "sprites/sDeaditeD/sDeaditeD.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sDeadite",
+    "path": "sprites/sDeadite/sDeadite.yy",
+  },
   "visible": true,
 }
