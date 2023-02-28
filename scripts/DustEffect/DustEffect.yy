@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "LandingEffect",
+  "name": "DustEffect",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

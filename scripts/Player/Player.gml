@@ -39,6 +39,17 @@ function movement()
 		{
 			x += sign(hsp);
 		}
+		if(place_meeting(x+hsp, y, oJumpWall))
+		{
+			vsp = 0;
+			canJump = 20;
+			wallSlideEffect--;
+			if (wallSlideEffect = 0)
+			{
+				DustEffect();
+				wallSlideEffect = 8;
+			}
+		}
 		hsp = 0;
 	}
 	x = x + hsp;
@@ -107,12 +118,12 @@ function playerWalkState()
 	   if (!footStepPlayed)
 	   {
 	      var chosen_sound = choose(sfxPlayer_Step1, sfxPlayer_Step2, sfxPlayer_Step3, sfxPlayer_Step4);
-	      while (chosen_sound == last_footstep_sound)
+	      while (chosen_sound == lastFootstepSound)
 	      {
 	         chosen_sound = choose(sfxPlayer_Step1, sfxPlayer_Step2, sfxPlayer_Step3, sfxPlayer_Step4);
 	      }
 	      audio_play_sound(chosen_sound, 0, false);
-	      last_footstep_sound = chosen_sound;
+	      lastFootstepSound = chosen_sound;
 	      footStepPlayed = true;
 	   }
 	}
@@ -203,17 +214,17 @@ function playerFallingState()
 	{
 		if (key_crouch = 1)
 		{
-			LandingEffect();
+			DustEffect();
 			playerState = playerStates.crouch;
 		}
 		else if(vsp = 0) and (hsp = 0) 
 		{
-			LandingEffect();
+			DustEffect();
 			playerState = playerStates.idle;
 		}
 		else if (vsp = 0) and (hsp != 0) 
 		{
-			LandingEffect();
+			DustEffect();
 			playerState = playerStates.walk;
 		}	
 	}
