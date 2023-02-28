@@ -7,13 +7,22 @@ function enemyAI()
 		distanceToPlayer = distance_to_object(oPlayer);
 		directionToPlayer = point_direction(x,y,oPlayer.x,oPlayer.y);
 	}
+	
+	if(distanceToPlayer < detectionRange)
+	{
+		foundPlayer = true;
+	}
+	else
+	{
+		foundPlayer = false;
+	}
 }
+
 
 function enemyMovement()
 {
 	//horizontal movement
 	hsp = walksp;
-	
 	//Horizontal Collision
 	if(place_meeting(x+hsp, y, oObstalce))
 	{
@@ -24,16 +33,31 @@ function enemyMovement()
 		walksp = -walksp;
 	}
 	x = x + hsp;
-	
-	if (!place_meeting(x+hsp,y+1,oObstalce))
+	if(foundPlayer)
 	{
-		walksp = -walksp;
+		if (!place_meeting(x+walksp,y+1,oObstalce))
+		{
+			walksp = 0;
+		}
+		else
+		{
+			walksp = 1;
+		}
+			x = x + (walksp * sign(image_xscale));
 	}
+	if (!foundPlayer)
+	{
+		if (!place_meeting(x+hsp,y+1,oObstalce))
+		{
+			walksp = -walksp;
+		}
+	}
+	
 }
+
 
 function enemyIdleStateFunction()
 {
-	sprite_index = sDeadite;
 	walksp = 0;
 	idleToPatrol = random_range(idleMinTime,idleMaxTime);
 	if (!alarm[0])
@@ -56,7 +80,6 @@ function enemyIdleStateFunction()
 function enemyPatrolStateFunction()
 {
 	//show_debug_message(hsp);
-	sprite_index = sDeaditeR;
 	if (!alarm[1])
 	{
 		alarm[1] = patrolToIdle;
@@ -73,9 +96,9 @@ function enemyPatrolStateFunction()
 
 function enemyAwareStateFunction()
 {
-	walksp = 0
-	sprite_index = sDeadite;
-	if (oPlayer.x > oDeadite.x)
+show_debug_message(walksp);
+
+	if (oPlayer.x > x)
 		{
 			image_xscale = 2;
 		}
@@ -108,7 +131,8 @@ function enemyAwareStateFunction()
 
 function enemyAttackStateFunction()
 {
-	if (oPlayer.x > oDeadite.x)
+	walksp = 0;
+	if (oPlayer.x > x)
 		{
 			image_xscale = 2;
 		}
@@ -163,6 +187,6 @@ function hurtEnemy()
 	hp = hp - 1;
 	//Playing hit sfx
 	audio_play_sound(sfxPlayer_Hit,15,false);
-	flash = 3
+	flash = 3;
 }
 

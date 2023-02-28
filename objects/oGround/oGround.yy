@@ -32,6 +32,9 @@
     "name": "sGround",
     "path": "sprites/sGround/sGround.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sGround",
+    "path": "sprites/sGround/sGround.yy",
+  },
   "visible": true,
 }

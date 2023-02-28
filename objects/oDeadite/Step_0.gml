@@ -2,8 +2,7 @@ applyGravity();
 enemyAI();
 enemyMovement();
 spriteOrientation();
-show_debug_message(enemyState);
-
+deaditeAnimation();
 
 switch (enemyState) 
 {

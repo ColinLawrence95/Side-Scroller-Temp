@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sPlayerC",
   "bbox_bottom": 47,
-  "bbox_left": 20,
+  "bbox_left": 19,
   "bbox_right": 29,
   "bbox_top": 32,
   "bboxMode": 2,

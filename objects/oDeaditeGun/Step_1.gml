@@ -1,4 +1,6 @@
 //show_debug_message(deaditeGunState);
+x = owner.x;
+y = owner.y;
 switch (deaditeGunState) 
 {
     case deaditeGunStates.idle:
