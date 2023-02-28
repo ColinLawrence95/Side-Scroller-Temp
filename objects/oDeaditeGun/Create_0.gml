@@ -32,7 +32,7 @@ function deaditeGunIdleStateFunction()
 }
 function deaditeGunAwareStateFunction()
 {
-	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
+	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 	{
 		aimGun(detectionRange)
 	}
@@ -51,7 +51,7 @@ function deaditeGunAwareStateFunction()
 }
 function deaditeGunAttackStateFunction()
 {
-	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
+	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 	{
 		aimGun(detectionRange)
 		shootGun();
@@ -94,7 +94,7 @@ function shootGun()
 	if(countdown <0)
 	{
 		countdown = countdownRate;
-		if (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
+		if (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 		{
 			//Playing gunshot sfx
 			audio_play_sound(sfxPlayer_Basic_Shot,7,false);

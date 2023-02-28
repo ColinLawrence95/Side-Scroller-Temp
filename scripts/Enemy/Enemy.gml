@@ -24,9 +24,9 @@ function enemyMovement()
 	//horizontal movement
 	hsp = walksp;
 	//Horizontal Collision
-	if(place_meeting(x+hsp, y, oObstalce))
+	if(place_meeting(x+hsp, y, oObstacle))
 	{
-		while (!place_meeting(x + sign(hsp), y, oObstalce))
+		while (!place_meeting(x + sign(hsp), y, oObstacle))
 		{
 			x += sign(hsp);
 		}
@@ -35,7 +35,7 @@ function enemyMovement()
 	x = x + hsp;
 	if(foundPlayer)
 	{
-		if (!place_meeting(x+walksp,y+1,oObstalce))
+		if (!place_meeting(x+walksp,y+1,oObstacle))
 		{
 			walksp = 0;
 		}
@@ -47,7 +47,7 @@ function enemyMovement()
 	}
 	if (!foundPlayer)
 	{
-		if (!place_meeting(x+hsp,y+1,oObstalce))
+		if (!place_meeting(x+hsp,y+1,oObstacle))
 		{
 			walksp = -walksp;
 		}
@@ -66,7 +66,7 @@ function enemyIdleStateFunction()
 		//change to patrol state under alarm 0
 		alarm[0] = idleToPatrol;
 	}
-	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
+	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 	{
 		enemyState = enemyStates.aware;
 	}
@@ -84,7 +84,7 @@ function enemyPatrolStateFunction()
 	{
 		alarm[1] = patrolToIdle;
 	}
-	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
+	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 	{
 		enemyState = enemyStates.aware;
 	}
@@ -106,7 +106,7 @@ show_debug_message(walksp);
 		{
 			image_xscale = -2;
 		}
-	if (distanceToPlayer <= attackRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstalce, false, false))
+	if (distanceToPlayer <= attackRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 	{
 		enemyState = enemyStates.attack;
 	}

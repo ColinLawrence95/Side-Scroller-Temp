@@ -33,9 +33,9 @@ function movement()
 		vsp = vsp - vspJump;
 	}
 	//Horizontal Collision
-	if(place_meeting(x+hsp, y, oObstalce))
+	if(place_meeting(x+hsp, y, oObstacle))
 	{
-		while (!place_meeting(x + sign(hsp), y, oObstalce))
+		while (!place_meeting(x + sign(hsp), y, oObstacle))
 		{
 			x += sign(hsp);
 		}
@@ -90,11 +90,11 @@ function playerIdleState()
 		playerState = playerStates.jumping;
 	}
 	//Change State
-	if (vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
+	if (vsp > 0) and (!place_meeting (x, y + 1, oObstacle))
 	{
 		playerState = playerStates.falling;
 	}
-	if (key_crouch = 1) and (place_meeting(x,y+1,oObstalce))
+	if (key_crouch = 1) and (place_meeting(x,y+1,oObstacle))
 	{
 		playerState = playerStates.crouch;
 	}
@@ -135,7 +135,7 @@ function playerWalkState()
 	{
 		playerState = playerStates.jumping;
 	}
-	if (vsp > 0) and (!place_meeting (x, y + 1, oObstalce))
+	if (vsp > 0) and (!place_meeting (x, y + 1, oObstacle))
 	{
 		playerState = playerStates.falling;
 	}
@@ -144,7 +144,7 @@ function playerWalkState()
 	{
 		playerState = playerStates.idle;
 	}
-	if (key_crouch = 1) and (place_meeting(x,y+1,oObstalce))
+	if (key_crouch = 1) and (place_meeting(x,y+1,oObstacle))
 	{
 		playerState = playerStates.crouch;
 	}
@@ -210,7 +210,7 @@ function playerFallingState()
 			oGun.y = oGun.y + 25;
 			walksp = 2;	
 		}
-	if (place_meeting(x,y+1,oObstalce))
+	if (place_meeting(x,y+1,oObstacle))
 	{
 		if (key_crouch = 1)
 		{
@@ -252,10 +252,10 @@ function playerCrouchState()
 	mask_index = sPlayerC;
 	oGun.y = oGun.y + 25;
 	walksp = 2;
-	if (place_meeting(x,y+1,oObstalce))
+	if (place_meeting(x,y+1,oObstacle))
     {
 		canJump = 10;
-		if (key_crouch = 0) and (place_meeting (x, y - 1, oObstalce))
+		if (key_crouch = 0) and (place_meeting (x, y - 1, oObstacle))
 		{
 			key_crouch = 1;
 		}
@@ -270,11 +270,11 @@ function playerCrouchState()
 	{
 		playerState = playerStates.death;
 	}
-	if (vsp < 0) and (!place_meeting(x,y+1,oObstalce))
+	if (vsp < 0) and (!place_meeting(x,y+1,oObstacle))
 	{
 		playerState = playerStates.jumping;
 	}
-	if (vsp > 0) and (!place_meeting(x,y+1,oObstalce))
+	if (vsp > 0) and (!place_meeting(x,y+1,oObstacle))
 	{
 		playerState = playerStates.falling;
 	}
@@ -283,7 +283,7 @@ function playerCrouchState()
 function playerDashState()
 {
 
-	if (place_meeting(x + hspeed, y + vspeed, oObstalce))
+	if (place_meeting(x + hspeed, y + vspeed, oObstacle))
 	{
 	    // Stop the dash if the player hits a wall
 	    dashHitWall = true;
@@ -312,7 +312,7 @@ function playerDashState()
 			hspeed = 0;
 			playerState = playerStates.jumping;
 		}
-		if (vsp >= 0) and (!place_meeting (x, y + 1, oObstalce))
+		if (vsp >= 0) and (!place_meeting (x, y + 1, oObstacle))
 		{
 			hspeed = 0;
 			playerState = playerStates.falling;

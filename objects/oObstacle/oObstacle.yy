@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oObstalce",
+  "name": "oObstacle",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],

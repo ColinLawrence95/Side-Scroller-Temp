@@ -10,8 +10,8 @@
     "path": "folders/Objects/Level.yy",
   },
   "parentObjectId": {
-    "name": "oObstalce",
-    "path": "objects/oObstalce/oObstalce.yy",
+    "name": "oObstacle",
+    "path": "objects/oObstacle/oObstacle.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

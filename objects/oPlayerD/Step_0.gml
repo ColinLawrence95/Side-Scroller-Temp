@@ -5,9 +5,9 @@ if (done == 0)
 	vsp = vsp + grv;
 
 	//Horizontal Collision
-	if (place_meeting(x + hsp,y,oObstalce))
+	if (place_meeting(x + hsp,y,oObstacle))
 	{
-		while (!place_meeting(x + sign(hsp),y,oObstalce))
+		while (!place_meeting(x + sign(hsp),y,oObstacle))
 		{
 			x = x + sign(hsp);
 		}
@@ -16,7 +16,7 @@ if (done == 0)
 	x = x + hsp;
 
 	//Vertical Collision
-	if (place_meeting(x,y+vsp,oObstalce))
+	if (place_meeting(x,y+vsp,oObstacle))
 	{
 		if (vsp > 0)
 		{
@@ -25,7 +25,7 @@ if (done == 0)
 			//setting delay before respawn
 			alarm[0] = 120;
 		}
-		while (!place_meeting(x,y+ sign(vsp),oObstalce))
+		while (!place_meeting(x,y+ sign(vsp),oObstacle))
 		{
 			y = y + sign(vsp);
 		}

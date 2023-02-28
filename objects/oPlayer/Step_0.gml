@@ -5,7 +5,7 @@ spriteOrientation();
 godMode();
 
 //show_debug_message(playerState);
-show_debug_message(bbox_right);
+//show_debug_message(bbox_right);
 
 switch (playerState) 
 {

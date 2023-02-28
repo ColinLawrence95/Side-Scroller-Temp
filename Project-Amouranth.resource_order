@@ -54,7 +54,7 @@
     {"name":"oLighting","order":2,"path":"objects/oLighting/oLighting.yy",},
     {"name":"oMenu_Settings","order":1,"path":"objects/oMenu_Settings/oMenu_Settings.yy",},
     {"name":"oMouse","order":2,"path":"objects/oMouse/oMouse.yy",},
-    {"name":"oObstalce","order":3,"path":"objects/oObstalce/oObstalce.yy",},
+    {"name":"oObstacle","order":3,"path":"objects/oObstacle/oObstacle.yy",},
     {"name":"oPersistent","order":1,"path":"objects/oPersistent/oPersistent.yy",},
     {"name":"oPinkPowerUp","order":4,"path":"objects/oPinkPowerUp/oPinkPowerUp.yy",},
     {"name":"oPlayer","order":2,"path":"objects/oPlayer/oPlayer.yy",},

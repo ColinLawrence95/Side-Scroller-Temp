@@ -3,9 +3,9 @@ function applyGravity()
 	//Apply Gravity
 	vsp = vsp + grv;
 	//Vertical Collision
-	if (place_meeting(x, y + vsp, oObstalce))
+	if (place_meeting(x, y + vsp, oObstacle))
 	{
-		while (!place_meeting(x, y + sign(vsp), oObstalce))
+		while (!place_meeting(x, y + sign(vsp), oObstacle))
 		{
 			y += sign(vsp);
 		}
