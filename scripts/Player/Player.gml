@@ -304,7 +304,7 @@ function playerDashState()
 	    canDash++;
 	}
 	
-	if (canDash >= dashTime || dashHitWall)
+	if (canDash >= dashTime || dashHitWall || place_meeting (x, y + 1, oObstacle))
 	{
 		dashHitWall = false;
 		if (vsp < 0)
@@ -312,7 +312,7 @@ function playerDashState()
 			hspeed = 0;
 			playerState = playerStates.jumping;
 		}
-		if (vsp >= 0) and (!place_meeting (x, y + 1, oObstacle))
+		if (vsp >= 0)
 		{
 			hspeed = 0;
 			playerState = playerStates.falling;
