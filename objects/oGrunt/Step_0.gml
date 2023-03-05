@@ -2,7 +2,7 @@ applyGravity();
 enemyAI();
 enemyMovement();
 spriteOrientation();
-deaditeAnimation();
+gruntAnimation();
 switch (enemyState) 
 {
     case enemyStates.idle:

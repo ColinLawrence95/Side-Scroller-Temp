@@ -34,3 +34,4 @@ if (done == 0)
 	y = y + vsp;
 }
 #endregion
+spriteOrientation();

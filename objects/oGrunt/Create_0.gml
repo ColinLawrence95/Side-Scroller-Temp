@@ -1,18 +1,8 @@
-enum enemyStates
-{
-	idle,
-	patrol,
-	aware,
-	attack,
-	jumping,
-	falling,
-	death,
-}
-speedScaling = 1;
+speedScaling = 1.5;
 patrolsp = 1;
 walksp = 1;
 vspJump = 7.5;
-hp = 4;
+hp = 2;
 flash = 0;
 canJump = 0;
 hsp = 0;
@@ -26,29 +16,31 @@ idleMinTime = 60;
 idleMaxTime = 300;
 patrolMinTime = 60;
 patrolMaxTime = 300;
-detectionRange = 500;
-attackRange = 450;
+detectionRange = 300;
+attackRange = 40;
 awareTime = 600;
 hitFrom = 0;
-deaditeGun = oDeaditeGun;
 idleToPatrol = 0;
 foundPlayer = false;
-enemeyDeathID = oDeaditeD;
+enemeyDeathID = oGruntD;
 
-function deaditeAnimation()
+function gruntAnimation()
 {
 	if (walksp = 0)
 	{
-		sprite_index = sDeadite;
+		sprite_index = sGrunt;
 	}
 	else if (walksp !=0)
 	{
-		sprite_index = sDeaditeR;
+		sprite_index = sGruntR;
 	}
-}
-
-myGun = instance_create_layer(x,y,"Gun",oDeaditeGun);
-with (myGun)
-{
-owner = other.id;
+	if (enemyState = enemyStates.attack)
+	{
+		sprite_index = sGruntM;
+		mask_index = sGruntM;
+	}
+	else
+	{
+		mask_index = sGrunt;
+	}
 }

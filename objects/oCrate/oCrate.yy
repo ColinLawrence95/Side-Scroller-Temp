@@ -43,6 +43,9 @@
     "name": "sCrate",
     "path": "sprites/sCrate/sCrate.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sCrate",
+    "path": "sprites/sCrate/sCrate.yy",
+  },
   "visible": true,
 }

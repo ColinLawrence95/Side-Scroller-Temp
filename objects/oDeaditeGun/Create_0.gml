@@ -4,10 +4,9 @@ enum deaditeGunStates
 	aware,
 	attack,
 }
-countdown = 100;
+countdown = 70;
 countdownRate = countdown;
 recoil = 0;
-owner = oDeadite;
 hsp = 0;
 deaditeGunState = deaditeGunStates.idle;
 deaditeGunIdle = deaditeGunStates.idle;
@@ -17,8 +16,6 @@ attackRange = 0;
 detectionRange = 0;
 function deaditeGunIdleStateFunction()
 {
-	x = owner.x;
-	y = owner.y;
 	image_xscale = 2;
 	image_yscale = 2;
 	with (oDeadite)
@@ -32,47 +29,50 @@ function deaditeGunIdleStateFunction()
 }
 function deaditeGunAwareStateFunction()
 {
-	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
+	if (instance_exists(oPlayer))
 	{
-		aimGun(detectionRange)
-	}
-	with(oDeadite)
-	{
-		other.detectionRange = detectionRange;
-		if (enemyState = enemyStates.attack)
+		if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 		{
-			other.deaditeGunState = other.deaditeGunAttack;
+			aimGun(detectionRange)
 		}
-		if (enemyState = enemyStates.idle) or (enemyState = enemyStates.patrol)
+		with(owner)
 		{
-			other.deaditeGunState = other.deaditeGunIdle;
+			other.detectionRange = detectionRange;
+			if (enemyState = enemyStates.attack)
+			{
+				other.deaditeGunState = other.deaditeGunAttack;
+			}
+			if (enemyState = enemyStates.idle) or (enemyState = enemyStates.patrol)
+			{
+				other.deaditeGunState = other.deaditeGunIdle;
+			}
 		}
 	}
 }
 function deaditeGunAttackStateFunction()
 {
-	if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
+	if (instance_exists(oPlayer))
 	{
-		aimGun(detectionRange)
-		shootGun();
-	}
-	with (oDeadite)
-	{
-		if (enemyState = enemyStates.idle) or (enemyState = enemyStates.patrol)
+		if(!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 		{
-			other.deaditeGunState = other.deaditeGunIdle;
+			aimGun(detectionRange)
+			shootGun();
 		}
-		if (enemyState = enemyStates.aware)
+		with (owner)
 		{
-			other.deaditeGunState = other.deaditeGunAware;
-		}	
+			if (enemyState = enemyStates.idle) or (enemyState = enemyStates.patrol)
+			{
+				other.deaditeGunState = other.deaditeGunIdle;
+			}
+			if (enemyState = enemyStates.aware)
+			{
+				other.deaditeGunState = other.deaditeGunAware;
+			}	
+		}
 	}
 }
 function aimGun(attackRange)
 {
-	x = owner.x;
-	y = owner.y;
-
 	image_xscale = abs(owner.image_xscale); 
 	image_yscale = abs(owner.image_yscale);
 
