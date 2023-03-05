@@ -8,6 +8,7 @@ function inputCheck()
 		key_dash = keyboard_check_pressed (vk_shift);
 		key_god = keyboard_check_pressed(ord("L"));
 		key_crouch = keyboard_check(ord("S"));
+		key_toss = keyboard_check(ord("G"));
 		move = key_right - key_left;
 	}
 	else
@@ -18,6 +19,7 @@ function inputCheck()
 		key_dash = 0;
 		key_god = 0;
 		key_crouch = 0;
+		key_toss = 0;
 		move = 0;
 	}
 }
@@ -101,6 +103,10 @@ function playerIdleState()
 	if (playerHP <= 0)
 	{
 		playerState = playerStates.death;
+	}
+	if (key_toss) and (!tacThrown)
+	{
+		playerState = playerStates.toss;
 	}
 }
 
@@ -323,6 +329,15 @@ function playerDashState()
 			playerState = playerStates.idle;
 		}
 	}
+}
+
+function playerTossState()
+{
+	var thrownTac = instance_create_layer(x,y,"Entities",oSpawnTac);
+	var thrownTacDirection = point_direction(x,y,mouse_x,mouse_y);
+	thrownTac.direction = thrownTacDirection;
+	tacThrown = true;
+	playerState = playerStates.idle;
 }
 
 function playerDeathState()

@@ -5,7 +5,7 @@ spriteOrientation();
 godMode();
 
 //show_debug_message(playerState);
-//show_debug_message(bbox_right);
+show_debug_message(playerHP);
 
 switch (playerState) 
 {
@@ -26,6 +26,9 @@ switch (playerState)
 		break;
 	case playerStates.dash:
 		playerDashState();
+		break;
+	case playerStates.toss:
+		playerTossState();
 		break;
 	case playerStates.death:
 		playerDeathState();

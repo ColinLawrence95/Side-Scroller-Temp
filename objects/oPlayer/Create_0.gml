@@ -6,6 +6,7 @@ enum playerStates
 	walk,
 	crouch,
 	dash,
+	toss,
 	death,
 }
 
@@ -22,6 +23,7 @@ lastTouch = 0;
 footStepPlayed = false;
 lastFootstepSound = noone;
 wallSlideEffect = 1;
+tacThrown = false;
 
 walksp = 4;
 vspJump = 7.5;
