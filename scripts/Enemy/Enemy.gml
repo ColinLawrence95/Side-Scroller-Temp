@@ -50,32 +50,37 @@ function enemyIdleStateFunction()
 		//change to patrol state under alarm 0
 		alarm[0] = idleToPatrol;
 	}
-	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
+	if (instance_exists(oPlayer))
 	{
-		enemyState = enemyStates.aware;
-	}
-	if (hp <= 0)
-	{
-		enemyState = enemyStates.death;
-	}
-		
+		if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
+		{
+			enemyState = enemyStates.aware;
+		}
+		if (hp <= 0)
+		{
+			enemyState = enemyStates.death;
+		}
+	}	
 }
 
 function enemyPatrolStateFunction()
 {
-	//show_debug_message(hsp);
-	if (!alarm[1])
+	if (instance_exists(oPlayer))
 	{
-		alarm[1] = patrolToIdle;
+		//show_debug_message(hsp);
+		if (!alarm[1])
+		{
+			alarm[1] = patrolToIdle;
+		}
+		if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
+		{
+			enemyState = enemyStates.aware;
+		}
+		if (hp <= 0)
+		{
+			enemyState = enemyStates.death;
+		}
 	}
-	if(distanceToPlayer < detectionRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
-	{
-		enemyState = enemyStates.aware;
-	}
-	if (hp <= 0)
-	{
-		enemyState = enemyStates.death;
-	}	
 }	
 
 function enemyAwareStateFunction()
