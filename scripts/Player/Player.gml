@@ -104,7 +104,7 @@ function playerIdleState()
 	{
 		playerState = playerStates.death;
 	}
-	if (key_toss) and (!tacThrown)
+	if (key_toss) and (!tacThrown) and (!instance_exists(oSpawnTacActive))
 	{
 		playerState = playerStates.toss;
 	}

@@ -7,7 +7,6 @@
   "inheritCreationOrder": false,
   "inheritLayers": false,
   "instanceCreationOrder": [
-    {"name":"inst_39817E35_2_1","path":"rooms/rDeniTest/rDeniTest.yy",},
     {"name":"inst_5B8A2885_2_1","path":"rooms/rDeniTest/rDeniTest.yy",},
     {"name":"inst_221E922B_1_1","path":"rooms/rDeniTest/rDeniTest.yy",},
     {"name":"inst_1FCD545C_1_1","path":"rooms/rDeniTest/rDeniTest.yy",},
@@ -428,7 +427,7 @@
     {"name":"inst_6DD251DB","path":"rooms/rDeniTest/rDeniTest.yy",},
     {"name":"inst_71C96D05","path":"rooms/rDeniTest/rDeniTest.yy",},
     {"name":"inst_53F8E4CE","path":"rooms/rDeniTest/rDeniTest.yy",},
-    {"name":"inst_75450E66","path":"rooms/rDeniTest/rDeniTest.yy",},
+    {"name":"inst_39817E35_2_1","path":"rooms/rDeniTest/rDeniTest.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -557,7 +556,6 @@
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Gun","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_39817E35_2_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oGun","path":"objects/oGun/oGun.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":512.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_75450E66","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oDeadite","path":"objects/oDeadite/oDeadite.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":512.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Deadite","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Walls","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
