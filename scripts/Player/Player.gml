@@ -183,9 +183,10 @@ function playerJumpingState()
 	{
 		playerState = playerStates.falling;
 	}
-	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash)
+	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash) and (!oPersistent.pAmmoCount = 0)
 	{
 		canJump = 0;
+		oPersistent.pAmmoCount--;
 		playerState = playerStates.dash;
 	}
 	if (playerHP <= 0)
@@ -234,9 +235,10 @@ function playerFallingState()
 			playerState = playerStates.walk;
 		}	
 	}
-	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash)
+	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash) and (!oPersistent.pAmmoCount = 0)
 	{
 		canJump = 0;
+		oPersistent.pAmmoCount--;
 		playerState = playerStates.dash;
 	}
 	if (playerHP <= 0)

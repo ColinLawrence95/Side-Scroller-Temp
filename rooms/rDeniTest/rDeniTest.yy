@@ -428,11 +428,17 @@
     {"name":"inst_71C96D05","path":"rooms/rDeniTest/rDeniTest.yy",},
     {"name":"inst_53F8E4CE","path":"rooms/rDeniTest/rDeniTest.yy",},
     {"name":"inst_39817E35_2_1","path":"rooms/rDeniTest/rDeniTest.yy",},
+    {"name":"inst_7A182750","path":"rooms/rDeniTest/rDeniTest.yy",},
+    {"name":"inst_5C026A83","path":"rooms/rDeniTest/rDeniTest.yy",},
+    {"name":"inst_5AD1A72A","path":"rooms/rDeniTest/rDeniTest.yy",},
   ],
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Mouse","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3D6C29B7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oMouse","path":"objects/oMouse/oMouse.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":480.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A182750","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oAmmo","path":"objects/oAmmo/oAmmo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":416.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5C026A83","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oAmmo","path":"objects/oAmmo/oAmmo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":512.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5AD1A72A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oAmmo","path":"objects/oAmmo/oAmmo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":576.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"tTilesShip","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":24,"SerialiseWidth":69,"TileCompressedData":[
 173,53,445,390,391,392,393,394,395,396,397,398,399,400,401,390,391,392,393,394,395,396,397,398,399,400,401,390,391,392,393,394,395,396,397,398,399,400,401,390,391,392,393,394,395,396,397,398,399,400,401,390,391,392,393,394,390,391,392,393,394,395,396,397,398,399,400,401,507,

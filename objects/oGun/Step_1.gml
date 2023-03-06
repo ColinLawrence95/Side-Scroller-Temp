@@ -27,24 +27,30 @@ with (oPersistent)
 		other.gChargeShot = false;
 	}
 }
-	
-if (gBluePower = true) and (gChargeShot = true)
+
+if (oPersistent.pAmmoCount = 0) and (oPersistent.pChargeShot = true)
+{
+	oPersistent.pChargeShot = false;
+}
+
+if (gBluePower = true) and (gChargeShot = true) and (oPersistent.pAmmoCount > 0)
 {
 	if (mouse_check_button (mb_left)) and (firingDelay <0)
-{
-	recoil = 15;
-	firingDelay = 100;
-	ScreenShake(10,10);
-	//Playing gunshot sfx
-	audio_play_sound(sfxPlayer_Basic_Shot,7,false);
-	
-	with (instance_create_layer (x,y,"Effects",oChargeShot)) 
 	{
-		speed = 50;
-		direction = other.image_angle;
-		image_angle = direction;
+		oPersistent.pAmmoCount--;
+		recoil = 15;
+		firingDelay = 100;
+		ScreenShake(10,10);
+		//Playing gunshot sfx
+		audio_play_sound(sfxPlayer_Basic_Shot,7,false);
+	
+		with (instance_create_layer (x,y,"Effects",oChargeShot)) 
+		{
+			speed = 50;
+			direction = other.image_angle;
+			image_angle = direction;
+		}
 	}
-}
 	
 	//Calculating recoil angle
 	x = x - lengthdir_x(recoil,image_angle);
