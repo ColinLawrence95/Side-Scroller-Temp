@@ -26,7 +26,6 @@ function inputCheck()
 
 function movement()
 {
-
 	//horizontal movement
 	hsp = move * walksp;
 	//Jump
@@ -35,28 +34,25 @@ function movement()
 		vsp = vsp - vspJump;
 	}
 	//Horizontal Collision
-	if(place_meeting(x+hsp, y, oObstacle))
+	move_and_collide(hsp,0,oObstacle,abs(ceil(hsp)))
+	//vertical Collision
+	if (array_length(move_and_collide(0,0,oObstacle,abs(ceil(vsp)),0,0)) > 0)
 	{
-		while (!place_meeting(x + sign(hsp), y, oObstacle))
+		if (vsp > 0) canJump = 10;
+		vsp = 0;
+	}	
+	if(place_meeting(x+hsp, y, oJumpWall))
+	{
+		vsp = 0;
+		canJump = 20;
+		wallSlideEffect--;
+		if (wallSlideEffect = 0)
 		{
-			x += sign(hsp);
+			DustEffect();
+			wallSlideEffect = 8;
 		}
-		if(place_meeting(x+hsp, y, oJumpWall))
-		{
-			vsp = 0;
-			canJump = 20;
-			wallSlideEffect--;
-			if (wallSlideEffect = 0)
-			{
-				DustEffect();
-				wallSlideEffect = 8;
-			}
-		}
-		hsp = 0;
 	}
-	x = x + hsp;
 }
-
 function godMode()
 {
 	if (key_god = 1)

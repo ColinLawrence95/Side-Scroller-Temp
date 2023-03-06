@@ -4,8 +4,10 @@ applyGravity();
 spriteOrientation();
 godMode();
 
+
 //show_debug_message(playerState);
 show_debug_message(oPersistent.pAmmoCount);
+
 
 switch (playerState) 
 {
