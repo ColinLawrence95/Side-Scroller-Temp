@@ -23,7 +23,6 @@ function inputCheck()
 		move = 0;
 	}
 }
-
 function movement()
 {
 	//horizontal movement
@@ -68,7 +67,6 @@ function godMode()
 	    }
 	}
 }
-
 function playerIdleState()
 {
 	//Idle Animation
@@ -88,10 +86,6 @@ function playerIdleState()
 		playerState = playerStates.jumping;
 	}
 	//Change State
-	if (vsp > 0) and (!place_meeting (x, y + 1, oObstacle))
-	{
-		playerState = playerStates.falling;
-	}
 	if (key_crouch = 1) and (place_meeting(x,y+1,oObstacle))
 	{
 		playerState = playerStates.crouch;
@@ -105,7 +99,6 @@ function playerIdleState()
 		playerState = playerStates.toss;
 	}
 }
-
 function playerWalkState()
 {
 	//Run Animation
@@ -133,11 +126,11 @@ function playerWalkState()
 	{
 	   footStepPlayed = false;
 	}
-	if (vsp < 0)
+	if (vsp < 0) and (!place_meeting(x,y + 1,oObstacle))
 	{
 		playerState = playerStates.jumping;
 	}
-	if (vsp > 0) and (!place_meeting (x, y + 1, oObstacle))
+	if (vsp > 0) and (!place_meeting(x,y + 3,oObstacle))
 	{
 		playerState = playerStates.falling;
 	}
@@ -155,7 +148,6 @@ function playerWalkState()
 		playerState = playerStates.death;
 	}	
 }
-
 function playerJumpingState()
 {
 	//Jump Animation
@@ -174,16 +166,20 @@ function playerJumpingState()
 	{
 		image_index = 2;
 	}
-	//Change State
-	if (vsp > 0)
+	if (vsp >= 1 && vsp <= 2  )
 	{
-		playerState = playerStates.falling;
+		image_index = 3;
 	}
+	//Change State
 	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash) and (!oPersistent.pAmmoCount = 0)
 	{
 		canJump = 0;
 		oPersistent.pAmmoCount--;
 		playerState = playerStates.dash;
+	}
+	if (vsp > 0) and (!place_meeting(x,y + 3,oObstacle))
+	{
+		playerState = playerStates.falling;
 	}
 	if (playerHP <= 0)
 	{
@@ -198,38 +194,40 @@ function playerJumpingState()
 		walksp = 2;
 	}
 }
-
 function playerFallingState()
 {
 	sprite_index = sPlayerA;
 	image_speed = 0;
 	image_index = 3;
 	canJump--;
-	if (key_crouch = 1)
-		{
-			image_speed = 0;
-			sprite_index = sPlayerC;
-			mask_index = sPlayerC;
-			oGun.y = oGun.y + 25;
-			walksp = 2;	
-		}
 	if (place_meeting(x,y+1,oObstacle))
 	{
-		if (key_crouch = 1)
+		if (vsp = 0)
 		{
-			DustEffect();
-			playerState = playerStates.crouch;
+			playerState = playerStates.jumping;
+			if (hsp = 0)
+			{
+				playerState = playerStates.idle;
+				DustEffect();
+			}
+			if (hsp !=0)
+			{
+				playerState = playerStates.walk;
+				DustEffect();
+			}
+			if (key_crouch = 1)
+			{
+				playerState = playerStates.crouch
+			}
 		}
-		else if(vsp = 0) and (hsp = 0) 
-		{
-			DustEffect();
-			playerState = playerStates.idle;
-		}
-		else if (vsp = 0) and (hsp != 0) 
-		{
-			DustEffect();
-			playerState = playerStates.walk;
-		}	
+	}
+	if (key_crouch = 1)
+	{
+		image_speed = 0;
+		sprite_index = sPlayerC;
+		mask_index = sPlayerC;
+		oGun.y = oGun.y + 25;
+		walksp = 2;
 	}
 	if (oPersistent.pPinkPower) and (canDash = 0) and (key_dash) and (!oPersistent.pAmmoCount = 0)
 	{
@@ -241,13 +239,8 @@ function playerFallingState()
 	{
 		playerState = playerStates.death;
 	}
-	if (vsp < 0)
-	{
-		playerState = playerStates.jumping;
-	}
-
+	
 }
-
 function playerCrouchState()
 {
 	canJump = 0;
@@ -278,12 +271,11 @@ function playerCrouchState()
 	{
 		playerState = playerStates.jumping;
 	}
-	if (vsp > 0) and (!place_meeting(x,y+1,oObstacle))
+	if (vsp > 0) and (!place_meeting(x,y+3,oObstacle))
 	{
 		playerState = playerStates.falling;
 	}
 }
-
 function playerDashState()
 {
 
@@ -328,7 +320,6 @@ function playerDashState()
 		}
 	}
 }
-
 function playerTossState()
 {
 	var thrownTac = instance_create_layer(x,y,"Entities",oSpawnTac);
@@ -337,7 +328,6 @@ function playerTossState()
 	tacThrown = true;
 	playerState = playerStates.idle;
 }
-
 function playerDeathState()
 {
 	with (oGun)
@@ -355,7 +345,6 @@ function playerDeathState()
 	vsp = lengthdir_y(4,direction)-2;
 		
 }
-
 function HurtPlayer(enemyID) //Damage player on contact
 {
 	//Seeing if god mode is on
