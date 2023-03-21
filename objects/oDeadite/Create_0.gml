@@ -35,6 +35,7 @@ idleToPatrol = 0;
 foundPlayer = false;
 enemeyDeathID = oDeaditeD;
 
+
 function deaditeAnimation()
 {
 	if (walksp = 0)

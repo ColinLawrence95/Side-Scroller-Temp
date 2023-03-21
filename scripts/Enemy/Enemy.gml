@@ -24,21 +24,19 @@ function enemyMovement()
 	//horizontal movement
 	hsp = walksp;
 	//Horizontal Collision
-	if(place_meeting(x+hsp, y, oObstacle))
+	if (place_meeting(x + hsp,y,oSlope))
 	{
-		while (!place_meeting(x + sign(hsp), y, oObstacle))
-		{
-			x += sign(hsp);
-		}
-		walksp = -walksp;
+		move_and_collide(hsp,-1,oObstacle,abs(ceil(hsp)))
 	}
-	x = x + hsp;
-		if (!place_meeting(x+hsp,y+1,oObstacle))
-		{
-			walksp = -walksp;
-		}	
+	else
+	{
+		move_and_collide(hsp,0,oObstacle,abs(ceil(hsp)))
+	}
+	
+	show_debug_message(walksp);
+	show_debug_message(hsp);
+	
 }
-
 
 function enemyIdleStateFunction()
 {
@@ -65,6 +63,22 @@ function enemyIdleStateFunction()
 
 function enemyPatrolStateFunction()
 {
+	if (place_meeting(x + hsp,y,oGround)) 
+	{
+		walksp = -walksp;
+	}
+	if (place_meeting(x + hsp,y,oWall)) 
+	{
+		walksp = -walksp;
+	}
+	if (place_meeting(x + hsp,y,oGeneral)) 
+	{
+		walksp = -walksp;
+	}
+	if (!place_meeting(x+hsp,y+3,oObstacle))
+	{
+		walksp = -walksp
+	}
 	if (instance_exists(oPlayer))
 	{
 		//show_debug_message(hsp);
@@ -87,6 +101,22 @@ function enemyAwareStateFunction()
 {	
 	if (instance_exists(oPlayer))
 	{
+		if (place_meeting(x + hsp,y,oGround)) 
+		{
+			walksp = 0;
+		}
+		if (place_meeting(x + hsp,y,oWall)) 
+		{
+			walksp = 0;
+		}
+		if (place_meeting(x + hsp,y,oGeneral)) 
+		{
+			walksp = 0;
+		}
+		if (!place_meeting(x+hsp,y+3,oObstacle))
+		{
+			walksp = 0;
+		}
 		if (oPlayer.x > x)
 			{
 				image_xscale = 2;
@@ -105,25 +135,7 @@ function enemyAwareStateFunction()
 			{
 				walksp = -1 * speedScaling;
 			}
-			if(place_meeting(x+hsp, y, oObstacle))
-			{
-				while (!place_meeting(x + sign(hsp), y, oObstacle))
-				{
-					x += sign(hsp);
-				}
-				walksp = 0;
-			}
-			if (!place_meeting(x+(walksp + sign(walksp)),y+1,oObstacle))
-			{
-				walksp = 0;
-			}
 		}
-		else if (collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false)) 
-		{
-			walksp = 0;
-		}	
-		x = x + walksp
-		y = y + vsp;
 		if (distanceToPlayer <= attackRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 		{
 			enemyState = enemyStates.attack;
