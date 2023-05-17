@@ -96,27 +96,10 @@ function enemyPatrolStateFunction()
 		}
 	}
 }	
-
 function enemyAwareStateFunction()
 {	
 	if (instance_exists(oPlayer))
 	{
-		if (place_meeting(x + hsp,y,oGround)) 
-		{
-			walksp = 0;
-		}
-		if (place_meeting(x + hsp,y,oWall)) 
-		{
-			walksp = 0;
-		}
-		if (place_meeting(x + hsp,y,oGeneral)) 
-		{
-			walksp = 0;
-		}
-		if (!place_meeting(x+hsp,y+3,oObstacle))
-		{
-			walksp = 0;
-		}
 		if (oPlayer.x > x)
 			{
 				image_xscale = 2;
@@ -124,14 +107,18 @@ function enemyAwareStateFunction()
 			else
 			{
 				image_xscale = -2;
-			}
-		if (distanceToPlayer > attackRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
+			}	
+		if (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false)) 
 		{
-			if (oPlayer.x > x)
+			if (!place_meeting(x+(hsp * 2),y+3,oObstacle))
+			{
+				walksp = 0;
+			}
+			else if (oPlayer.x > x)
 			{
 				walksp = 1 * speedScaling;
 			}
-			if (oPlayer.x < x)
+			else if (oPlayer.x < x)
 			{
 				walksp = -1 * speedScaling;
 			}
