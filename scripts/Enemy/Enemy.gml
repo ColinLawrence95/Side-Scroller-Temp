@@ -108,9 +108,13 @@ function enemyAwareStateFunction()
 			{
 				image_xscale = -2;
 			}	
+			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle))
+			{
+				walksp = 0;
+			}
 		if (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false)) 
 		{
-			if (!place_meeting(x+(hsp * 2),y+3,oObstacle))
+			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle))
 			{
 				walksp = 0;
 			}
