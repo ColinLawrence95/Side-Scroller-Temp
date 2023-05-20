@@ -4,7 +4,7 @@ enum deaditeGunStates
 	aware,
 	attack,
 }
-countdown = 70;
+countdown = 50;
 countdownRate = countdown;
 recoil = 0;
 hsp = 0;

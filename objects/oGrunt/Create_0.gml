@@ -1,4 +1,4 @@
-speedScaling = 1.5;
+speedScaling = 3;
 patrolsp = 1;
 walksp = 1;
 vspJump = 7.5;
@@ -16,7 +16,7 @@ idleMinTime = 60;
 idleMaxTime = 300;
 patrolMinTime = 60;
 patrolMaxTime = 300;
-detectionRange = 300;
+detectionRange = 750;
 attackRange = 40;
 awareTime = 600;
 hitFrom = 0;
