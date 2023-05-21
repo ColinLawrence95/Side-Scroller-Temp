@@ -20,6 +20,10 @@ if (surface_exists(lightSurf))
 	{
 		BasicLight();
 	}
+	with(oTeleport)
+	{
+		BasicLight();
+	}
 	//adjusting darkness via varible darkness
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
