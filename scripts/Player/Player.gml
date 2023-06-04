@@ -32,6 +32,8 @@ function movement()
 	{
 		vsp = vsp - vspJump;
 	}
+		
+	
 	//Horizontal Collision
 	move_and_collide(hsp,0,oObstacle,abs(ceil(hsp)))
 	//vertical Collision
