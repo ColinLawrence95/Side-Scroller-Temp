@@ -32,7 +32,14 @@ function movement()
 	{
 		vsp = vsp - vspJump;
 	}
-		
+	
+	//Moving platforms
+	var _movingPlatform = instance_place(x, y + max(1, vsp), oPlatformMoving);
+	if (_movingPlatform && bbox_bottom >= _movingPlatform.bbox_top) {
+		hsp += oPlatformMoving.hsp;
+		vsp += oPlatformMoving.vsp;
+	}
+	
 	
 	//Horizontal Collision
 	move_and_collide(hsp,0,oObstacle,abs(ceil(hsp)))
@@ -78,7 +85,7 @@ function playerIdleState()
 	canJump = 10;
 	canDash = 0;
 	//Change State
-	if (hsp == walksp) or (hsp == -walksp)
+	if (hsp == walksp or hsp == -walksp)
 	{
 		playerState = playerStates.walk;
 	}
@@ -137,7 +144,7 @@ function playerWalkState()
 		playerState = playerStates.falling;
 	}
 	//Change State
-	if (hsp == 0)
+	if ((hsp == 0 and vsp == 0) or (key_left == 0 and key_right == 0))
 	{
 		playerState = playerStates.idle;
 	}
