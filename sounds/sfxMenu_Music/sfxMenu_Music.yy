@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 116.00977,
+  "duration": 105.0,
   "parent": {
     "name": "Menu",
     "path": "folders/Sounds/Level/Menu.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sfxMenu_Music.mp3",
+  "soundFile": "sfxMenu_Music.wav",
   "type": 0,
-  "volume": 0.5,
+  "volume": 0.4,
 }
