@@ -59,7 +59,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.4.0.84",
+    "IDEVersion": "2023.6.0.89",
   },
   "resources": [
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},},
@@ -70,6 +70,7 @@
     {"id":{"name":"oChargeShot","path":"objects/oChargeShot/oChargeShot.yy",},},
     {"id":{"name":"oCollectable","path":"objects/oCollectable/oCollectable.yy",},},
     {"id":{"name":"oCollectable2","path":"objects/oCollectable2/oCollectable2.yy",},},
+    {"id":{"name":"DisappearEffect","path":"scripts/DisappearEffect/DisappearEffect.yy",},},
     {"id":{"name":"oCrate","path":"objects/oCrate/oCrate.yy",},},
     {"id":{"name":"oDeadite","path":"objects/oDeadite/oDeadite.yy",},},
     {"id":{"name":"oDeaditeBullet","path":"objects/oDeaditeBullet/oDeaditeBullet.yy",},},
@@ -161,6 +162,7 @@
     {"id":{"name":"sDeadite","path":"sprites/sDeadite/sDeadite.yy",},},
     {"id":{"name":"sDeaditeA","path":"sprites/sDeaditeA/sDeaditeA.yy",},},
     {"id":{"name":"sDeaditeBullet","path":"sprites/sDeaditeBullet/sDeaditeBullet.yy",},},
+    {"id":{"name":"sDisappear","path":"sprites/sDisappear/sDisappear.yy",},},
     {"id":{"name":"sDeaditeD","path":"sprites/sDeaditeD/sDeaditeD.yy",},},
     {"id":{"name":"sDeaditeGun","path":"sprites/sDeaditeGun/sDeaditeGun.yy",},},
     {"id":{"name":"sPlatformMoving","path":"sprites/sPlatformMoving/sPlatformMoving.yy",},},
@@ -168,6 +170,7 @@
     {"id":{"name":"sDust","path":"sprites/sDust/sDust.yy",},},
     {"id":{"name":"sGeneral","path":"sprites/sGeneral/sGeneral.yy",},},
     {"id":{"name":"sTeleport","path":"sprites/sTeleport/sTeleport.yy",},},
+    {"id":{"name":"oDisappear","path":"objects/oDisappear/oDisappear.yy",},},
     {"id":{"name":"sGH1Trees1","path":"sprites/sGH1Trees1/sGH1Trees1.yy",},},
     {"id":{"name":"sGH1Trees2","path":"sprites/sGH1Trees2/sGH1Trees2.yy",},},
     {"id":{"name":"sGH1Trees3","path":"sprites/sGH1Trees3/sGH1Trees3.yy",},},
