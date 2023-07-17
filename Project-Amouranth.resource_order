@@ -33,6 +33,8 @@
     {"name":"UI","order":6,"path":"folders/Sprites/UI.yy",},
     {"name":"Weapons","order":1,"path":"folders/Sprites/Weapons.yy",},
     {"name":"Tile Sets","order":7,"path":"folders/Tile Sets.yy",},
+    {"name":"Soul Wisp","order":3,"path":"folders/Sprites/Enemys/Soul Wisp.yy",},
+    {"name":"Soul Wisp","order":2,"path":"folders/Objects/Enemy/Soul Wisp.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"fNPC1","order":1,"path":"fonts/fNPC1/fNPC1.yy",},

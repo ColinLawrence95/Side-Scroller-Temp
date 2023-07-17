@@ -32,10 +32,6 @@ function enemyMovement()
 	{
 		move_and_collide(hsp,0,oObstacle,abs(ceil(hsp)))
 	}
-	
-	show_debug_message(walksp);
-	show_debug_message(hsp);
-	
 }
 
 function enemyIdleStateFunction()
@@ -75,7 +71,7 @@ function enemyPatrolStateFunction()
 	{
 		walksp = -walksp;
 	}
-	if (!place_meeting(x+hsp,y+3,oObstacle))
+	if (!place_meeting(x+hsp,y+3,oObstacle)) and (enemyType != 1)
 	{
 		walksp = -walksp
 	}
