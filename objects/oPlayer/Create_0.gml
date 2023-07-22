@@ -28,6 +28,10 @@ tacThrown = false;
 walksp = 4;
 vspJump = 7.5;
 playerHP = 3;
+playerHPCurrent = playerHP;
+healthbar_width = 100;
+healthbar_height = 32;
+
 dashTime = 15;
 dashSpeed = 10
 dashHitWall = 0;
