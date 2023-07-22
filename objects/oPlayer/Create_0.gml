@@ -30,8 +30,9 @@ vspJump = 7.5;
 playerHP = 3;
 playerHPCurrent = playerHP;
 healthbar_width = 100;
-healthbar_height = 32;
-
+healthbar_height = 11.5;
+healthbar_x = 50;
+healthbar_y = 50;
 dashTime = 15;
 dashSpeed = 10
 dashHitWall = 0;

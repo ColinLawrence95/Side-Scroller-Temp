@@ -9,6 +9,7 @@ godMode();
 
 
 
+
 switch (playerState) 
 {
     case playerStates.idle:

@@ -71,7 +71,7 @@ function enemyPatrolStateFunction()
 	{
 		walksp = -walksp;
 	}
-	if (!place_meeting(x+hsp,y+3,oObstacle)) and (enemyType != 1)
+	if (!place_meeting(x+hsp,y+3,oObstacle))
 	{
 		walksp = -walksp
 	}
