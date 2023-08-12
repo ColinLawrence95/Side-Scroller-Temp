@@ -85,7 +85,14 @@ function playerIdleState()
 	canJump = 10;
 	canDash = 0;
 	//Change State
-	if (hsp == walksp or hsp == -walksp or hsp == (walksp + oPlatformMoving.hsp) or hsp == (-walksp + oPlatformMoving.hsp))
+	if (instance_exists(oPlatformMoving))
+	{
+		if (hsp == walksp or hsp == -walksp or hsp == (walksp + oPlatformMoving.hsp) or hsp == (-walksp + oPlatformMoving.hsp))
+		{
+			playerState = playerStates.walk;
+		}
+	}
+	if (hsp == walksp or hsp == -walksp)
 	{
 		playerState = playerStates.walk;
 	}
