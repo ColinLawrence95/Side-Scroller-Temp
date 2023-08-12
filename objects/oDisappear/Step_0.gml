@@ -10,5 +10,3 @@ if(disappearTime == 0){
 	DisappearEffect();
 	instance_destroy();
 }
-
-show_debug_message(disappearTime);

@@ -349,7 +349,7 @@ function playerDeathState()
 	instance_destroy(oMouse);
 	
 	//Calculating knockback angle
-	direction = point_direction(lastTouch.x, lastTouch.y, x, y,)
+	direction = point_direction(lastTouch.x, lastTouch.y, x, y)
 	hsp = lengthdir_x(6,direction);			
 	vsp = lengthdir_y(4,direction)-2;
 		
@@ -368,7 +368,6 @@ function HurtPlayer(enemyID) //Damage player on contact
 			audio_play_sound(sfxPlayer_Hit,15,false);
 			playerFlash = 30;
 			invincable = 1;
-			show_debug_message(playerHP);
 		
 			if (!alarm[0])
 			{

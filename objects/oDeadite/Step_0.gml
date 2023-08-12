@@ -3,7 +3,7 @@ enemyAI();
 enemyMovement();
 spriteOrientation();
 deaditeAnimation();
-show_debug_message(enemyState);
+//show_debug_message(enemyState);
 switch (enemyState) 
 {
     case enemyStates.idle:

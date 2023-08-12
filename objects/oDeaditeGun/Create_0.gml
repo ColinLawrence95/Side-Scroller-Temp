@@ -82,7 +82,7 @@ function aimGun(attackRange)
 		{
 			image_yscale = -image_yscale;
 		}
-		if (point_distance(oPlayer.x, oPlayer.y, x, y,) < attackRange)
+		if (point_distance(oPlayer.x, oPlayer.y, x, y) < attackRange)
 		{
 			image_angle = point_direction(x, y, oPlayer.x, oPlayer.y + 20);
 		}

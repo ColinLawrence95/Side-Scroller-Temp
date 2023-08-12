@@ -15,6 +15,7 @@ function enemyAI()
 	else
 	{
 		foundPlayer = false;
+		foundPlayer = false;
 	}
 }
 
@@ -40,7 +41,7 @@ function enemyIdleStateFunction()
 	idleToPatrol = random_range(idleMinTime,idleMaxTime);
 	if (!alarm[0])
 	{
-		show_debug_message("ALARM 0 SWITCH TO PATROL")
+		//show_debug_message("ALARM 0 SWITCH TO PATROL")
 		//change to patrol state under alarm 0
 		alarm[0] = idleToPatrol;
 	}
