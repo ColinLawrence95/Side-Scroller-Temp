@@ -1,7 +1,7 @@
 /// @description Automatic Save upon entering new room
 
 //check if save exists and overwrites
-if (file_exists(SAVEFILE))
+/*if (file_exists(SAVEFILE))
 {
 	file_delete(SAVEFILE);
 }
@@ -10,4 +10,4 @@ if (file_exists(SAVEFILE))
 var file;
 file = file_text_open_write(SAVEFILE);
 file_text_write_real(file,string(room));
-file_text_close(file);
+file_text_close(file);*/

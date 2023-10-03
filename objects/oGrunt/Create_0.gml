@@ -23,7 +23,7 @@ hitFrom = 0;
 idleToPatrol = 0;
 foundPlayer = false;
 enemeyDeathID = oGruntD;
-
+enemyType = 0;
 function gruntAnimation()
 {
 	if (walksp = 0)

@@ -72,13 +72,15 @@ function enemyPatrolStateFunction()
 	{
 		walksp = -walksp;
 	}
-	if (!place_meeting(x+hsp,y+3,oObstacle))
+	if (enemyType != 1)
 	{
-		walksp = -walksp
+		if (!place_meeting(x+hsp,y+3,oObstacle))
+		{
+			walksp = -walksp
+		}
 	}
 	if (instance_exists(oPlayer))
 	{
-		//show_debug_message(hsp);
 		if (!alarm[1])
 		{
 			alarm[1] = patrolToIdle;
@@ -105,13 +107,13 @@ function enemyAwareStateFunction()
 			{
 				image_xscale = -2;
 			}	
-			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle))
+			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle)) and (enemyType != 1)
 			{
 				walksp = 0;
 			}
 		if (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false)) 
 		{
-			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle))
+			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle)) and (enemyType != 1)
 			{
 				walksp = 0;
 			}
@@ -119,11 +121,21 @@ function enemyAwareStateFunction()
 			{
 				walksp = 1 * speedScaling;
 			}
-			else if (oPlayer.x < x)
+			else if (oPlayer.x < x) 
 			{
 				walksp = -1 * speedScaling;
 			}
+			
+			if (enemyType = 1)
+			{	
+				speed = 1.5;
+				direction = directionToPlayer
+			}
 		}
+		
+		
+		
+		
 		if (distanceToPlayer <= attackRange) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false))
 		{
 			enemyState = enemyStates.attack;

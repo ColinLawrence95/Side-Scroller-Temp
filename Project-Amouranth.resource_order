@@ -57,6 +57,7 @@
     {"name":"sJumpWall","order":9,"path":"sprites/sJumpWall/sJumpWall.yy",},
     {"name":"oAmmo","order":7,"path":"objects/oAmmo/oAmmo.yy",},
     {"name":"oGun","order":2,"path":"objects/oGun/oGun.yy",},
+    {"name":"sSoulwispA","order":1,"path":"sprites/sSoulwispA/sSoulwispA.yy",},
     {"name":"oHitSpark","order":3,"path":"objects/oHitSpark/oHitSpark.yy",},
     {"name":"oLighting","order":2,"path":"objects/oLighting/oLighting.yy",},
     {"name":"sAmmo","order":8,"path":"sprites/sAmmo/sAmmo.yy",},

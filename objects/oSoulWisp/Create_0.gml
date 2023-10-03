@@ -1,4 +1,4 @@
-speedScaling = 1;
+speedScaling = 2;
 patrolsp = 1;
 walksp = 1;
 hp = 2;

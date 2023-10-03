@@ -61,7 +61,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.92",
+    "IDEVersion": "2023.8.0.98",
   },
   "resources": [
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},},
@@ -90,6 +90,7 @@
     {"id":{"name":"sJumpWall","path":"sprites/sJumpWall/sJumpWall.yy",},},
     {"id":{"name":"oAmmo","path":"objects/oAmmo/oAmmo.yy",},},
     {"id":{"name":"oGun","path":"objects/oGun/oGun.yy",},},
+    {"id":{"name":"sSoulwispA","path":"sprites/sSoulwispA/sSoulwispA.yy",},},
     {"id":{"name":"oHitSpark","path":"objects/oHitSpark/oHitSpark.yy",},},
     {"id":{"name":"oLevel","path":"objects/oLevel/oLevel.yy",},},
     {"id":{"name":"oLighting","path":"objects/oLighting/oLighting.yy",},},
@@ -227,6 +228,7 @@
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"roomId":{"name":"GH1","path":"rooms/GH1/GH1.yy",},},
   ],
+  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],

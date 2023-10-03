@@ -34,7 +34,7 @@ deaditeGun = oDeaditeGun;
 idleToPatrol = 0;
 foundPlayer = false;
 enemeyDeathID = oDeaditeD;
-
+enemyType = 0;
 
 function deaditeAnimation()
 {
