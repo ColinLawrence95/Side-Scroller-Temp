@@ -1,4 +1,4 @@
-disappearTime = 180;
+disappearTime = 100;
 playerTouched = false;
 hsp = 0;
 vsp = 0;

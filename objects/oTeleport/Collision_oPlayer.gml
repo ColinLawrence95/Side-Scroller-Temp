@@ -1,8 +1,7 @@
-with (oPlayer)
+if (keyboard_check(ord("F")))
 {
-	if (keyboard_check(ord("F")))
-	{
-		x = oTeleport.xTP;
-		y = oTeleport.yTP;
-	}
+	show_debug_message(xTP);
+	show_debug_message(yTP);
+	oPlayer.x = xTP;
+	oPlayer.y = yTP;
 }
