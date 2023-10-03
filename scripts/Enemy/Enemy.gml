@@ -1,5 +1,4 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+//Script to define and handle enemy states and actions within
 function enemyAI()
 {
 	if (instance_exists(oPlayer))
@@ -18,8 +17,6 @@ function enemyAI()
 		foundPlayer = false;
 	}
 }
-
-
 function enemyMovement()
 {
 	//horizontal movement
@@ -34,7 +31,6 @@ function enemyMovement()
 		move_and_collide(hsp,0,oObstacle,abs(ceil(hsp)))
 	}
 }
-
 function enemyIdleStateFunction()
 {
 	walksp = 0;
@@ -57,7 +53,6 @@ function enemyIdleStateFunction()
 		}
 	}	
 }
-
 function enemyPatrolStateFunction()
 {
 	if (place_meeting(x + hsp,y,oGround)) 
@@ -101,11 +96,11 @@ function enemyAwareStateFunction()
 	{
 		if (oPlayer.x > x)
 			{
-				image_xscale = 2;
+				image_xscale = enemyXScale;
 			}
 			else
 			{
-				image_xscale = -2;
+				image_xscale = -enemyXScale;
 			}	
 			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle)) and (enemyType != 1)
 			{
@@ -163,7 +158,6 @@ function enemyAwareStateFunction()
 		}
 	}
 }
-
 function enemyAttackStateFunction()
 {
 	walksp = 0;
@@ -187,7 +181,6 @@ function enemyAttackStateFunction()
 		enemyState = enemyStates.death;
 	}
 }
-
 function enemyJumpingStateFunction()
 {
 	if (oPlayer.x > x)
@@ -207,7 +200,6 @@ function enemyJumpingStateFunction()
 		enemyState = enemyStates.death;
 	}
 }
-
 function enemyFallingStateFunction()
 {
 	if (oPlayer.x > x)
@@ -227,7 +219,6 @@ function enemyFallingStateFunction()
 		enemyState = enemyStates.death;
 	}
 }
-
 function enemyDeathStateFunction()
 {
 	with (instance_create_layer(x,y,layer,enemeyDeathID))

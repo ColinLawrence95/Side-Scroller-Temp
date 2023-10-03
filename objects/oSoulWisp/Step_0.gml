@@ -1,7 +1,7 @@
 enemyAI();
 enemyMovement();
 spriteOrientation();
-show_debug_message(speed);
+//show_debug_message(speed);
 switch (enemyState) 
 {
     case enemyStates.idle:
