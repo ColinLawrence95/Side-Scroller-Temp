@@ -69,7 +69,7 @@ function enemyPatrolStateFunction()
 	}
 	if (enemyType != 1)
 	{
-		if (!place_meeting(x+hsp,y+3,oObstacle))
+		if (!place_meeting(x+hsp,y+50,oObstacle))
 		{
 			walksp = -walksp
 		}
@@ -102,13 +102,13 @@ function enemyAwareStateFunction()
 			{
 				image_xscale = -enemyXScale;
 			}	
-			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle)) and (enemyType != 1)
+			if (!place_meeting(x+(hsp + image_xscale),y+50,oObstacle)) and (enemyType != 1)
 			{
 				walksp = 0;
 			}
 		if (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false)) 
 		{
-			if (!place_meeting(x+(hsp + image_xscale),y+3,oObstacle)) and (enemyType != 1)
+			if (!place_meeting(x+(hsp + image_xscale),y+50,oObstacle)) and (enemyType != 1)
 			{
 				walksp = 0;
 			}
