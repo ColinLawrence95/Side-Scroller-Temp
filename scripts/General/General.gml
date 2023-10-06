@@ -1,7 +1,21 @@
 function applyGravity()
 {
 	//Apply Gravity
-	vsp = vsp + grv;
+	if (place_meeting(x,y,oWater))
+	{
+		if (vsp < 0)
+		{
+			vsp = vsp + (grv / 1.5);
+		}
+		else if (vsp > 0)
+		{
+			vsp = vsp + (grv / 5);
+		}
+	}
+	else
+	{
+		vsp = vsp + grv;
+	}
 	//Vertical Collision
 	if (place_meeting(x, y + vsp, oObstacle))
 	{

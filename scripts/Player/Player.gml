@@ -28,6 +28,10 @@ function movement()
 	//horizontal movement
 	hsp = move * walksp;
 	//Jump
+	if (place_meeting(x,y,oWater))
+	{
+		canJump = 1;
+	}
 	if (key_jump = 1) and (canJump > 0)
 	{
 		vsp = vsp - vspJump;
