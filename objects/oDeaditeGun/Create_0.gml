@@ -4,7 +4,7 @@ enum deaditeGunStates
 	aware,
 	attack,
 }
-countdown = 50;
+countdown = 20;
 countdownRate = countdown;
 recoil = 0;
 hsp = 0;
@@ -76,7 +76,7 @@ function aimGun(attackRange)
 	image_xscale = abs(owner.image_xscale); 
 	image_yscale = abs(owner.image_yscale);
 
-	if (instance_exists(oPlayer))
+	if (instance_exists(oPlayer)) and (!collision_line(x, y, oPlayer.x, oPlayer.y, oObstacle, false, false)) 
 	{
 		if (oPlayer.x < x)
 		{
