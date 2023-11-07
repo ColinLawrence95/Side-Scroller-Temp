@@ -38,6 +38,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"fNPC1","order":1,"path":"fonts/fNPC1/fNPC1.yy",},
+    {"name":"sEnemySpawn","order":17,"path":"sprites/sEnemySpawn/sEnemySpawn.yy",},
     {"name":"oChargeShot","order":1,"path":"objects/oChargeShot/oChargeShot.yy",},
     {"name":"oCollectable","order":1,"path":"objects/oCollectable/oCollectable.yy",},
     {"name":"oCollectable2","order":2,"path":"objects/oCollectable2/oCollectable2.yy",},
@@ -153,6 +154,7 @@
     {"name":"oWaterTop","order":8,"path":"objects/oWaterTop/oWaterTop.yy",},
     {"name":"oPressF","order":4,"path":"objects/oPressF/oPressF.yy",},
     {"name":"sGun","order":4,"path":"sprites/sGun/sGun.yy",},
+    {"name":"oEnemySpawn","order":11,"path":"objects/oEnemySpawn/oEnemySpawn.yy",},
     {"name":"sHitSpark","order":5,"path":"sprites/sHitSpark/sHitSpark.yy",},
     {"name":"sLight","order":1,"path":"sprites/sLight/sLight.yy",},
     {"name":"sTree3","order":21,"path":"sprites/sTree3/sTree3.yy",},

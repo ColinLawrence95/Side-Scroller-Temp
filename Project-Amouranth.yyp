@@ -61,13 +61,14 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.106",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},},
     {"id":{"name":"fNPC1","path":"fonts/fNPC1/fNPC1.yy",},},
     {"id":{"name":"oBluePowerUp","path":"objects/oBluePowerUp/oBluePowerUp.yy",},},
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},},
+    {"id":{"name":"sEnemySpawn","path":"sprites/sEnemySpawn/sEnemySpawn.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oChargeShot","path":"objects/oChargeShot/oChargeShot.yy",},},
     {"id":{"name":"oCollectable","path":"objects/oCollectable/oCollectable.yy",},},
@@ -207,6 +208,7 @@
     {"id":{"name":"oWaterTop","path":"objects/oWaterTop/oWaterTop.yy",},},
     {"id":{"name":"oPressF","path":"objects/oPressF/oPressF.yy",},},
     {"id":{"name":"sGun","path":"sprites/sGun/sGun.yy",},},
+    {"id":{"name":"oEnemySpawn","path":"objects/oEnemySpawn/oEnemySpawn.yy",},},
     {"id":{"name":"sHitSpark","path":"sprites/sHitSpark/sHitSpark.yy",},},
     {"id":{"name":"sLight","path":"sprites/sLight/sLight.yy",},},
     {"id":{"name":"sMenu1","path":"sprites/sMenu1/sMenu1.yy",},},
