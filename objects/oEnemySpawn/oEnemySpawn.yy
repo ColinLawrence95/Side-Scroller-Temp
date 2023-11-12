@@ -36,5 +36,5 @@
     "path": "sprites/sEnemySpawn/sEnemySpawn.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
