@@ -7,7 +7,7 @@ if instance_exists(oSpawnTacActive)
 	instance_create_layer(x,y,"Mouse",oMouse);
 	oPlayer.x = oSpawnTacActive.x;
 	oPlayer.y = oSpawnTacActive.y - 50;
-   
+	oPersistent.tacSpawnUsed = true;
 }
 else
 {

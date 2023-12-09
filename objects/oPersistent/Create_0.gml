@@ -6,3 +6,4 @@ pIceBeam = false;
 pPinkPower = false;
 pCanDie = true;
 pAmmoCount = 5;
+

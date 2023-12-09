@@ -114,7 +114,7 @@ function playerIdleState()
 	{
 		playerState = playerStates.death;
 	}
-	if (key_toss) and (!tacThrown) and (!instance_exists(oSpawnTacActive))
+	if (key_toss) and (!tacThrown) and ((!instance_exists(oSpawnTacActive)) and (!instance_exists(oSpawnTacUsed))) 
 	{
 		playerState = playerStates.toss;
 	}
@@ -346,6 +346,7 @@ function playerTossState()
 	var thrownTacDirection = point_direction(x,y,mouse_x,mouse_y);
 	thrownTac.direction = thrownTacDirection;
 	tacThrown = true;
+	oPersistent.tacSpawnUsed = false;
 	playerState = playerStates.idle;
 }
 function playerDeathState()

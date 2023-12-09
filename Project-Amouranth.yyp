@@ -61,7 +61,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.0.121",
   },
   "resources": [
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},},
@@ -76,6 +76,7 @@
     {"id":{"name":"DisappearEffect","path":"scripts/DisappearEffect/DisappearEffect.yy",},},
     {"id":{"name":"sGrass1","path":"sprites/sGrass1/sGrass1.yy",},},
     {"id":{"name":"sWater","path":"sprites/sWater/sWater.yy",},},
+    {"id":{"name":"sSpawnTacUsed","path":"sprites/sSpawnTacUsed/sSpawnTacUsed.yy",},},
     {"id":{"name":"oCrate","path":"objects/oCrate/oCrate.yy",},},
     {"id":{"name":"oDeadite","path":"objects/oDeadite/oDeadite.yy",},},
     {"id":{"name":"oDeaditeBullet","path":"objects/oDeaditeBullet/oDeaditeBullet.yy",},},
@@ -118,6 +119,7 @@
     {"id":{"name":"oText","path":"objects/oText/oText.yy",},},
     {"id":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},},
     {"id":{"name":"oTriggerPlayerDeath","path":"objects/oTriggerPlayerDeath/oTriggerPlayerDeath.yy",},},
+    {"id":{"name":"oSpawnTacUsed","path":"objects/oSpawnTacUsed/oSpawnTacUsed.yy",},},
     {"id":{"name":"sfxMenu_Music","path":"sounds/sfxMenu_Music/sfxMenu_Music.yy",},},
     {"id":{"name":"oTriggerRoomEnd","path":"objects/oTriggerRoomEnd/oTriggerRoomEnd.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
