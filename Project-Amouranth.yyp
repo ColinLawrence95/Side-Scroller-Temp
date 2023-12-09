@@ -170,6 +170,7 @@
     {"id":{"name":"sfxPlayer_Landing","path":"sounds/sfxPlayer_Landing/sfxPlayer_Landing.yy",},},
     {"id":{"name":"sWaterTop","path":"sprites/sWaterTop/sWaterTop.yy",},},
     {"id":{"name":"sfxPlayer_Step1","path":"sounds/sfxPlayer_Step1/sfxPlayer_Step1.yy",},},
+    {"id":{"name":"GH2","path":"rooms/GH2/GH2.yy",},},
     {"id":{"name":"sfxPlayer_Step2","path":"sounds/sfxPlayer_Step2/sfxPlayer_Step2.yy",},},
     {"id":{"name":"sBush1","path":"sprites/sBush1/sBush1.yy",},},
     {"id":{"name":"sfxPlayer_Step3","path":"sounds/sfxPlayer_Step3/sfxPlayer_Step3.yy",},},
@@ -258,6 +259,7 @@
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"roomId":{"name":"GH1","path":"rooms/GH1/GH1.yy",},},
+    {"roomId":{"name":"GH2","path":"rooms/GH2/GH2.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

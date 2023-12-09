@@ -33,6 +33,7 @@ if (menuX > guiWidth + 150) and (menuCommited != -1)
 {
 	switch (menuCommited)
 	{
+		case 6: Transition(TRANS_MODE.GOTO, GH2); break
 		case 5: Transition(TRANS_MODE.GOTO, rDeniTest); break
 		case 4: Transition(TRANS_MODE.GOTO, rColinTest); break;
 		//New game

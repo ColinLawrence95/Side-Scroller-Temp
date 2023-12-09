@@ -122,6 +122,7 @@
     {"name":"sfxPlayer_Jump","order":3,"path":"sounds/sfxPlayer_Jump/sfxPlayer_Jump.yy",},
     {"name":"sfxPlayer_Landing","order":4,"path":"sounds/sfxPlayer_Landing/sfxPlayer_Landing.yy",},
     {"name":"sWaterTop","order":14,"path":"sprites/sWaterTop/sWaterTop.yy",},
+    {"name":"GH2","order":5,"path":"rooms/GH2/GH2.yy",},
     {"name":"sfxPlayer_Step2","order":1,"path":"sounds/sfxPlayer_Step2/sfxPlayer_Step2.yy",},
     {"name":"sBush1","order":7,"path":"sprites/sBush1/sBush1.yy",},
     {"name":"sfxPlayer_Step3","order":2,"path":"sounds/sfxPlayer_Step3/sfxPlayer_Step3.yy",},

@@ -1,7 +1,13 @@
 if (keyboard_check(ord("F")))
 {
-	show_debug_message(xTP);
-	show_debug_message(yTP);
-	oPlayer.x = xTP;
-	oPlayer.y = yTP;
+with (oPlayer)
+{
+	if (hascontrol)
+		{
+			show_debug_message("Got here")
+			hascontrol = false;
+			Transition(TRANS_MODE.GOTO,other.destination)
+		}
+}
+	
 }
