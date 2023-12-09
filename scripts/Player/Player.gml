@@ -213,6 +213,10 @@ function playerJumpingState()
 		oGun.y = oGun.y + 25;
 		walksp = 2;
 	}
+	if (key_toss) and (!tacThrown) and ((!instance_exists(oSpawnTacActive)) and (!instance_exists(oSpawnTacUsed))) 
+	{
+		playerState = playerStates.toss;
+	}
 }
 function playerFallingState()
 {
@@ -259,7 +263,10 @@ function playerFallingState()
 	{
 		playerState = playerStates.death;
 	}
-	
+	if (key_toss) and (!tacThrown) and ((!instance_exists(oSpawnTacActive)) and (!instance_exists(oSpawnTacUsed))) 
+	{
+		playerState = playerStates.toss;
+	}
 }
 function playerCrouchState()
 {
@@ -294,6 +301,10 @@ function playerCrouchState()
 	if (vsp > 0) and (!place_meeting(x,y+3,oObstacle))
 	{
 		playerState = playerStates.falling;
+	}
+	if (key_toss) and (!tacThrown) and ((!instance_exists(oSpawnTacActive)) and (!instance_exists(oSpawnTacUsed))) 
+	{
+		playerState = playerStates.toss;
 	}
 }
 function playerDashState()
