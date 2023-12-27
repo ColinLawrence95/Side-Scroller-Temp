@@ -289,7 +289,6 @@
     {"name":"inst_7002D1E6","path":"rooms/GH1/GH1.yy",},
     {"name":"inst_3F0B15AD","path":"rooms/GH1/GH1.yy",},
     {"name":"inst_4BA9D19E","path":"rooms/GH1/GH1.yy",},
-    {"name":"inst_C458F39","path":"rooms/GH1/GH1.yy",},
     {"name":"inst_22C9F042","path":"rooms/GH1/GH1.yy",},
     {"name":"inst_78D20392","path":"rooms/GH1/GH1.yy",},
     {"name":"inst_588A5955","path":"rooms/GH1/GH1.yy",},
@@ -395,10 +394,6 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemySpawn","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"propertyId":{"name":"enemyObjectType","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"value":"oDeadite",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemySpawn","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"propertyId":{"name":"spawnRange","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"value":"800",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1504.0,"y":160.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_C458F39","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oEnemySpawn","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"properties":[
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemySpawn","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"propertyId":{"name":"enemyObjectType","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"value":"oSoulWisp",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemySpawn","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"propertyId":{"name":"spawnRange","path":"objects/oEnemySpawn/oEnemySpawn.yy",},"value":"700",},
-          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2080.0,"y":256.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_560C2925","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"sGrass1","path":"sprites/sGrass1/sGrass1.yy",},"x":348.0,"y":378.0,},
