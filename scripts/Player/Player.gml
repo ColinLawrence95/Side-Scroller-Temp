@@ -4,10 +4,11 @@ function inputCheck()
 	{
 		key_left = keyboard_check(vk_left) or keyboard_check(ord("A"));
 		key_right = keyboard_check(vk_right) or keyboard_check(ord("D"));
+		key_up = keyboard_check(vk_up) or keyboard_check(ord("W"));
 		key_jump = keyboard_check_pressed (vk_space);
 		key_dash = keyboard_check_pressed (vk_shift);
 		key_god = keyboard_check_pressed(ord("L"));
-		key_crouch = keyboard_check(ord("S"));
+		key_down = keyboard_check(vk_down) or keyboard_check(ord("S"));
 		key_toss = keyboard_check(ord("G"));
 		move = key_right - key_left;
 	}
@@ -15,10 +16,11 @@ function inputCheck()
 	{
 		key_left = 0;
 		key_right = 0;
+		key_up = 0;
 		key_jump = 0;
 		key_dash = 0;
 		key_god = 0;
-		key_crouch = 0;
+		key_down = 0;
 		key_toss = 0;
 		move = 0;
 	}
@@ -107,7 +109,7 @@ function playerIdleState()
 		playerState = playerStates.jumping;
 	}
 	//Change State
-	if (key_crouch = 1) and (place_meeting(x,y+1,oObstacle))
+	if (key_down = 1) and (place_meeting(x,y+1,oObstacle))
 	{
 		playerState = playerStates.crouch;
 	}
@@ -118,6 +120,10 @@ function playerIdleState()
 	if (key_toss) and (!tacThrown) and ((!instance_exists(oSpawnTacActive)) and (!instance_exists(oSpawnTacUsed))) 
 	{
 		playerState = playerStates.toss;
+	}
+	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	{
+		playerState = playerStates.ladder;
 	}
 }
 function playerWalkState()
@@ -160,14 +166,18 @@ function playerWalkState()
 	{
 		playerState = playerStates.idle;
 	}
-	if (key_crouch = 1) and (place_meeting(x,y+1,oObstacle))
+	if (key_down = 1) and (place_meeting(x,y+1,oObstacle))
 	{
 		playerState = playerStates.crouch;
 	}
 	if (playerHP <= 0)
 	{
 		playerState = playerStates.death;
-	}	
+	}
+	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	{
+		playerState = playerStates.ladder;
+	}
 }
 function playerJumpingState()
 {
@@ -206,7 +216,7 @@ function playerJumpingState()
 	{
 		playerState = playerStates.death;
 	}
-	if (key_crouch = 1)
+	if (key_down = 1)
 	{
 		image_speed = 0;
 		sprite_index = sPlayerC;
@@ -217,6 +227,10 @@ function playerJumpingState()
 	if (key_toss) and (!tacThrown) and ((!instance_exists(oSpawnTacActive)) and (!instance_exists(oSpawnTacUsed))) 
 	{
 		playerState = playerStates.toss;
+	}
+	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	{
+		playerState = playerStates.ladder;
 	}
 }
 function playerFallingState()
@@ -240,13 +254,13 @@ function playerFallingState()
 				playerState = playerStates.walk;
 				DustEffect();
 			}
-			if (key_crouch = 1)
+			if (key_down = 1)
 			{
 				playerState = playerStates.crouch
 			}
 		}
 	}
-	if (key_crouch = 1)
+	if (key_down = 1)
 	{
 		image_speed = 0;
 		sprite_index = sPlayerC;
@@ -268,6 +282,10 @@ function playerFallingState()
 	{
 		playerState = playerStates.toss;
 	}
+	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	{
+		playerState = playerStates.ladder;
+	}
 }
 function playerCrouchState()
 {
@@ -280,12 +298,12 @@ function playerCrouchState()
 	if (place_meeting(x,y+1,oObstacle))
     {
 		canJump = 10;
-		if (key_crouch = 0) and (place_meeting (x, y - 1, oObstacle))
+		if (key_down = 0) and (place_meeting (x, y - 1, oObstacle))
 		{
-			key_crouch = 1;
+			key_down = 1;
 		}
     }
-	if (key_crouch = 0)
+	if (key_down = 0)
 	{ 
 		walksp = 4;
 		mask_index = sPlayer;
@@ -306,6 +324,10 @@ function playerCrouchState()
 	if (key_toss) and (!tacThrown) and ((!instance_exists(oSpawnTacActive)) and (!instance_exists(oSpawnTacUsed))) 
 	{
 		playerState = playerStates.toss;
+	}
+	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	{
+		playerState = playerStates.ladder;
 	}
 }
 function playerDashState()
@@ -351,6 +373,10 @@ function playerDashState()
 			playerState = playerStates.idle;
 		}
 	}
+	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	{
+		playerState = playerStates.ladder;
+	}
 }
 function playerTossState()
 {
@@ -360,6 +386,42 @@ function playerTossState()
 	tacThrown = true;
 	oPersistent.tacSpawnUsed = false;
 	playerState = playerStates.idle;
+}
+function playerLadderState()
+{
+	vsp = 0;
+	image_speed = 1;
+	sprite_index = sPlayer;
+	mask_index = sPlayer;
+	vsp = vsp - grv; //turn off grav
+	if(key_up = 1)
+	{
+		if (place_meeting(x, y - 5, oObstacle))
+		{
+			vsp = 0;
+		}else{
+		y = y - 5
+		}
+	}
+	if(key_down = 1)
+	{
+		if (place_meeting(x, y + 5, oObstacle))
+		{
+			vsp = 0;
+			playerState = playerStates.idle;
+		}else{
+		y = y + 5
+		}
+	}
+	if(key_jump = 1)
+	{
+		vsp = vsp - vspJump;
+		playerState = playerStates.jumping;
+	}	
+	if(!place_meeting(x, y, oLadder1))
+	{
+		playerState = playerStates.idle;
+	}
 }
 function playerDeathState()
 {

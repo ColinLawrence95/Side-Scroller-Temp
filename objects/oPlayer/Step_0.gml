@@ -7,6 +7,7 @@ godMode();
 
 //show_debug_message(hsp);
 show_debug_message(playerState);
+show_debug_message(vsp);
 
 
 
@@ -36,4 +37,7 @@ switch (playerState)
 	case playerStates.death:
 		playerDeathState();
 		break;
+	case playerStates.ladder:
+		playerLadderState();
+		break;	
 }
