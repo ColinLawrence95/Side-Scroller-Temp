@@ -6,7 +6,7 @@ godMode();
 
 
 //show_debug_message(hsp);
-
+show_debug_message(playerState);
 
 
 

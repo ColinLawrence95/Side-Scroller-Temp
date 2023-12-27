@@ -41,7 +41,8 @@ function movement()
 	var _movingPlatform = instance_place(x, y + max(1, vsp), oPlatformMoving);
 	if (_movingPlatform && bbox_bottom >= _movingPlatform.bbox_top) {
 		hsp += _movingPlatform.hsp;
-		vsp += _movingPlatform.vsp;
+		y = _movingPlatform.y - 48;
+
 	}
 	
 	
