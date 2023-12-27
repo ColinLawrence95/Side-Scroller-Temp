@@ -8,6 +8,7 @@ enum playerStates
 	dash,
 	toss,
 	death,
+	ladder,
 }
 
 hsp = 0;
