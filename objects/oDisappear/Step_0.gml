@@ -4,6 +4,11 @@ if (place_meeting(x, y - 1, oPlayer)) {
 
 if(disappearTime != 0 && playerTouched == true){
 		disappearTime--;
+		image_speed = 1;
+		if (sprite_index = 5)
+		{
+			image_speed = 0;
+		}
 	}
 
 if(disappearTime == 0){
