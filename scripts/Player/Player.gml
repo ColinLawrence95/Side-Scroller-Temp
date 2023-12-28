@@ -109,7 +109,7 @@ function playerIdleState()
 		playerState = playerStates.jumping;
 	}
 	//Change State
-	if (key_down = 1) and (place_meeting(x,y+1,oObstacle))
+	if (key_down = 1) and (place_meeting(x,y+2,oObstacle))
 	{
 		playerState = playerStates.crouch;
 	}
@@ -121,7 +121,7 @@ function playerIdleState()
 	{
 		playerState = playerStates.toss;
 	}
-	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	if((place_meeting(x, y, oLadder1) && key_up = 1) || (place_meeting(x, y + 100, oLadder1)) && key_down = 1 && (place_meeting(x,y+1,oObstacle)))
 	{
 		playerState = playerStates.ladder;
 	}
@@ -174,7 +174,7 @@ function playerWalkState()
 	{
 		playerState = playerStates.death;
 	}
-	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	if((place_meeting(x, y, oLadder1) && key_up = 1) || (place_meeting(x, y + 100, oLadder1)) && key_down = 1 && (place_meeting(x,y+1,oObstacle)))
 	{
 		playerState = playerStates.ladder;
 	}
@@ -228,7 +228,7 @@ function playerJumpingState()
 	{
 		playerState = playerStates.toss;
 	}
-	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	if((place_meeting(x, y, oLadder1) && key_up = 1) || (place_meeting(x, y + 100, oLadder1)) && key_down = 1 && (place_meeting(x,y+1,oObstacle)))
 	{
 		playerState = playerStates.ladder;
 	}
@@ -282,7 +282,7 @@ function playerFallingState()
 	{
 		playerState = playerStates.toss;
 	}
-	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	if((place_meeting(x, y, oLadder1) && key_up = 1) || (place_meeting(x, y + 100, oLadder1)) && key_down = 1 && (place_meeting(x,y+1,oObstacle)))
 	{
 		playerState = playerStates.ladder;
 	}
@@ -325,7 +325,7 @@ function playerCrouchState()
 	{
 		playerState = playerStates.toss;
 	}
-	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	if((place_meeting(x, y, oLadder1) && key_up = 1) || (place_meeting(x, y + 100, oLadder1)) && key_down = 1 && (place_meeting(x,y+1,oObstacle)))
 	{
 		playerState = playerStates.ladder;
 	}
@@ -373,7 +373,7 @@ function playerDashState()
 			playerState = playerStates.idle;
 		}
 	}
-	if(place_meeting(x, y, oLadder1) && key_up = 1)
+	if((place_meeting(x, y, oLadder1) && key_up = 1) || (place_meeting(x, y + 100, oLadder1)) && key_down = 1 && (place_meeting(x,y+1,oObstacle)))
 	{
 		playerState = playerStates.ladder;
 	}
@@ -396,22 +396,15 @@ function playerLadderState()
 	vsp = vsp - grv; //turn off grav
 	if(key_up = 1)
 	{
-		if (place_meeting(x, y - 5, oObstacle))
-		{
-			vsp = 0;
-		}else{
 		y = y - 5
-		}
 	}
-	if(key_down = 1)
+	if((place_meeting(x, y + 68, oLadder1)) && key_down = 1)
 	{
-		if (place_meeting(x, y + 5, oObstacle))
-		{
-			vsp = 0;
-			playerState = playerStates.idle;
-		}else{
 		y = y + 5
-		}
+	}
+	if((!place_meeting(x, y + 68, oLadder1)) && key_down = 1)
+	{
+		playerState = playerStates.crouch;
 	}
 	if(key_jump = 1)
 	{
